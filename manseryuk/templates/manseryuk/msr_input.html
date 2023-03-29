@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<main class="site-body">
+  <form class="" method="post" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="name">
+        {{ form.name|add_class:"cp-input"|attr:"placeholder:이름" }}
+        {% for error in form.name.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.year|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:년(年)" }}
+        {% for error in form.year.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.month|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:월(月)" }}
+        {% for error in form.month.errors %}
+        <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.day|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:일(日)" }}
+        {% for error in form.day.errors %}
+        <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.time|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:시간" }}
+        {% for error in form.time.errors %}
+        <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.sl|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:음력/양력" }}
+        {% for error in form.sl.errors %}
+        <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.gen|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:성별" }}
+        {% for error in form.gen.errors %}
+        <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+    
+
+    <div class="buttons">
+      <button class="cp-button submit" type="submit">완료</button>
+    </div>
+  </form>
+</main>
+{% endblock content %}

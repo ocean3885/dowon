@@ -1,0 +1,125 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="wrap">
+    {% include 'header.html' %}
+
+    <div class="container">
+        <div class="subCent">
+            <div class="subLeftBan"></div>
+            <div class="subRightBan1"></div>
+        </div>
+        <div class="subCent">
+            {% include 'base/components/sub_sidemenu2.html' %}
+            <div class="subContent">
+                <div class="submitForm-wrap">
+                    <form method="POST" autocomplete="off" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        <div class="requester-form-wrap">
+                            <div class="title">
+                                <h3>신청인 정보<span> 신청서 조회시 이름과 전화번호가 사용되므로 정확히 입력해주시기 바랍니다.</span></h3>
+                            </div>
+                            <div class='form-content'>
+                                <div>{{ form.category.label_tag }} {{ form.category }}</div>
+                                <p>{{ form.name.label_tag }} {{ form.name }}</p>
+                                <p>{{ form.phonnumber.label_tag }} {{ form.phonnumber }}</p>
+                                <p>{{ form.email.label_tag }} {{ form.email }}</p>
+                                <p>{{ form.description.label_tag }} {{ form.description }}</p>
+                            </div>
+                        </div>
+                        <div class="sjperson-form-wrap">
+                            <div class="title-wrap">
+                                <div class="title">
+                                    <h3>상담신청인 인적사항</h3>
+                                </div>
+                                <div class="mini-button-wrap">
+                                    <span>대상자 추가하기</span>
+                                    <button id="add-more" type='button'><img src="{% static 'img/plus.png' %}" ></button>
+                                    <button id="remove" type='button' class="hidden"><img src="{% static 'img/minus.png' %}"></button>
+                                </div>
+                                
+                            </div>
+                            {{formset.management_form}}
+                            <div id="person-form-list">
+                                {% for form2 in formset %}
+                                <div class="person-form-sj">
+                                    {{form2.as_p}}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div id="empty-form" class="hidden">
+                                <div class="top-bar"></div>
+                                {{formset.empty_form.as_p}}
+                            </div>
+                        </div>
+                        
+                       
+                        <div class="submit-button-wrap">
+                            {% if type %}
+                            <button type="submit">수정완료</button>
+                            {% else %}
+                            <button type="submit">신청하기</button>
+                            {% endif %}
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        {% include 'footer.html' %}
+
+    </div>
+</div>
+
+<script>
+
+const addMoreBtn = document.getElementById('add-more')
+const totalNewForms = document.getElementById('id_form-TOTAL_FORMS')
+const startNum = totalNewForms.value
+const removeBtn = document.getElementById('remove')
+addMoreBtn.addEventListener('click', add_new_form)
+removeBtn.addEventListener('click', remove_last_form)
+
+function add_new_form(event) {
+    if (event) {
+        event.preventDefault()
+    }
+    const currentPersonForms = document.getElementsByClassName('person-form-sj')
+    const currentFormCount = currentPersonForms.length
+    const formCopyTarget = document.getElementById('person-form-list')
+    const copyEmptyFormEl = document.getElementById('empty-form').cloneNode(true)
+    copyEmptyFormEl.setAttribute('class','person-form-sj')
+    copyEmptyFormEl.setAttribute('id', `form-${currentFormCount}`)
+    const regex = new RegExp('__prefix__', 'g')
+    copyEmptyFormEl.innerHTML = copyEmptyFormEl.innerHTML.replace(regex,currentFormCount)
+    totalNewForms.setAttribute('value', currentFormCount + 1)
+    formCopyTarget.append(copyEmptyFormEl)
+    const addRemoveBtn = document.querySelector('#remove')
+    addRemoveBtn.setAttribute('class','')
+}
+
+function remove_last_form(event) {
+    if (event) {
+        event.preventDefault()
+    }
+    const selectForms = document.querySelector('.person-form-sj:last-child')
+    selectForms.remove()
+    const currentPersonForms = document.getElementsByClassName('person-form-sj')
+    const currentFormCount = currentPersonForms.length 
+    totalNewForms.setAttribute('value', currentFormCount)
+    if (currentFormCount == startNum ){
+        const hiddenRemoveBtn = document.querySelector('#remove')
+        hiddenRemoveBtn.setAttribute('class','hidden')
+    }
+}
+
+
+selectFirstDelete = document.getElementById('id_form-0-DELETE')
+selectHideNode = selectFirstDelete.parentNode.parentNode.lastElementChild
+selectHideNode.setAttribute('class','hidden')
+
+</script>
+
+{% endblock content %}

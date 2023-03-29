@@ -1,0 +1,16 @@
+{% load static %}
+<div class="subSideMenu">
+    <div class="sideNav">
+        <ul>
+            <a href="{% url 'submit-info' %}"><li>신청방법안내</li></a>
+            <a href="{% url 'submit-jm' %}"><li>신생아작명신청</li></a>
+            <a href="{% url 'submit-gm' %}"><li>개명신청</li></a>
+            <a href="{% url 'submit-sj' %}"><li>사주/궁합상담</li></a>
+            <li>택일문의하기</li>
+            <a href="{% url 'find-submit' %}"><li>신청확인하기</li></a>
+        </ul>
+    </div>
+    <div class="sidebot">
+        <img aria-label="sub-side-bottom-bg" src="{% static 'img/subsidebottom.png' %}">
+    </div>
+</div>

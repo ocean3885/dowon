@@ -1,0 +1,917 @@
+@font-face {font-family: 'NotoSansKR-thin';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+@font-face {font-family: 'NotoSansKR-light';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+@font-face {font-family: 'NotoSansKR-regular';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+@font-face {font-family: 'NotoSansKR-medium';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+@font-face {font-family: 'NotoSansKR-bold';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+@font-face {font-family: 'NotoSansKR-black';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+
+
+
+a:link { color: black; text-decoration: none;}
+a:visited { color: black; text-decoration: none;}
+
+#id_gen {
+    list-style : none;
+    margin:0;
+    padding:0;
+        
+}
+
+#id_sl {
+    list-style : none;
+    margin:0;
+    padding:0;
+}
+
+.font-default{
+    font-size: 1.3rem;
+}
+
+.hidden {
+    display:none;
+}
+
+html {
+    font-family: 'NotoSansKR-regular';
+    font-size: 16px;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    line-height: normal;
+    overflow-y: scroll;
+}
+
+.wrap {
+    width: 100%;
+    min-width: 1200px;
+    margin: 0 auto;
+
+}
+
+/* ---------  header start --------- */
+
+.header {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.header_wrap {
+    width:1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.logo > a > img {
+    margin-left: 50px;
+    width:200px;
+    height: 70px
+}
+
+
+.nav {
+    width: 900px;    
+    align-items: center;
+    display: flex;   
+    justify-content: center;    
+    font-size: 1rem;
+}
+
+.nav > ul {
+    width: 100%;   
+    list-style: none;    
+    padding: 0;    
+    margin: 0;    
+    display: flex;    
+    justify-content: center; 
+    gap: 42px;
+}
+
+#nav-underline {
+    position: absolute;
+    left:285;
+    height: 3px;
+    width: 0px;
+    border-radius: 3px;
+    transition: 0.5s;
+    background-color: rgb(152, 136, 136);
+    top:69;
+
+}
+
+.nav > ul > li {    
+    text-align: center;
+}
+
+.nav > ul > li:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ---------  header end --------- */
+
+/* ---------  center start --------- */
+
+.container {
+    width:100%;     
+    margin:0 auto;   
+    display: flex;
+    flex-direction: column;
+}
+
+
+.banner_con {
+    background:url('/static/img/main_banner_con_bg.jpg') no-repeat; 
+    background-size:cover; 
+    background-position:center; 
+    text-align:center;
+}
+
+.con_nav {
+    width: 1200px;    
+    margin: 0 auto;    
+    display: flex;   
+    justify-content: center;    
+}
+
+.con_nav > ul {
+    width: 100%;   
+    list-style: none;    
+    padding: 0;    
+    margin: 0;    
+    display: flex;    
+
+}
+
+.con_nav > ul > a > li {
+    width: 240px;    
+    height : 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1rem;
+    border: 1px solid #dfdfdf;
+    
+}
+
+.con_nav > ul > a > li:hover {
+    background-color: rgb(232, 219, 204);  
+    color: #4c2c2c;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contents_con {
+    width:1200px; 
+    margin:0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 0px;
+    gap: 10px;
+}
+
+#left-con-wrap {
+    width:800px;
+    height:400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-between;
+}
+
+.lcon-div {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width:260px;
+    height:200px;
+    overflow: hidden;
+    border: 1px solid #e6e6e6;
+}
+
+.lcon-div div img {
+    transition:1s
+}
+
+.lcon-div:hover div img {
+    transform: scale(1.1);
+}
+
+.lcon-div:hover .lcon_text div {
+    border: 1px solid rgb(161, 161, 161);
+}
+
+.lcon-div:hover {
+    cursor: pointer;
+    background-color: rgb(232, 219, 204);
+}
+
+.lcon_img {
+    overflow: hidden;
+    height:110px;
+}
+
+.lcon_text {
+    font-size: 1.01rem;
+    height:40px;
+    padding : 8px;
+}
+
+.lcon_text div {
+    border: 1px dashed rgb(168, 168, 168);
+    padding: 2px 15px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.lcon_text span {
+    font-family: 'NotoSansKR-light';
+    font-size: 0.9rem;
+}
+
+#right_con { 
+    width:388px;
+    height:410px;
+    border: 1px solid #dfdfdf;
+    overflow: hidden;
+}
+
+#down_con {
+    width:1200px;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
+.downDiv1 {
+    width:595px;
+    height:300px;
+    border: 1px solid #dfdfdf;
+}
+
+.downDiv2 {
+    width:595px;
+    height:300px;
+    border: 1px solid #dfdfdf;
+}
+
+.tab-btn {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.tab-btn li {
+    background: #e1e1e1;
+    color: rgb(48, 48, 48);
+    flex: auto;
+    text-align: center;
+    padding: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.tab-btn li:hover {
+    font-weight: bold;
+}
+
+.tab-btn li.active {
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+.tab-content {
+    position: relative;
+}
+
+.tab {
+    position: absolute;
+    width: 100%;
+    height:266px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;    
+}
+
+.tab-content div.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.tabText {
+    position: inherit;
+    color: #1d1d1d;
+    top:10px;
+    left:270px;
+    width: 310px;
+    height: 250px;
+    font-size: 0.9rem;
+    line-height: 160%;
+}
+
+
+.tabImage {
+    position: inherit;
+    top:20px;
+    left:20px;
+    width:230px;
+    height:230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+}
+
+.tabImage img {
+    width:200px;
+    height:200px;
+}
+
+
+/* ---------  center end --------- */
+
+/* ----------- footer start ---------- */
+
+.footer {
+    width: 100%;    
+    margin: 0 auto;    
+    height: 200px;
+    background-color: #E8E8E8;
+}
+
+.fwrap {
+    width:1200px;
+    height:100%;
+    margin: 0 auto;    
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fwrap div img {
+    margin-left:80px;
+    width:180px
+}
+
+.ftext {
+    display: flex;
+    width:800px;
+    justify-content: left;
+    padding-left: 70px;
+    flex-direction: column;
+}
+
+.ftext ul{
+    display: flex;
+    margin:0px;
+    padding:0px;
+    gap: 20px;
+    justify-content: left;
+}
+
+.ftext ul li {
+    list-style: none;
+    font-family: 'NotoSansKR-medium';
+}
+
+.ftext div p.copy {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.ftext div p span {
+    display: inline-block;
+    color: rgba(93, 93, 93, 0.4);
+    margin: 0 10px;
+    font-weight: bold;
+}
+/* ----------- footer end ---------- */
+
+/* ----------- sub introduce start ---------- */
+
+.subCent {
+    width:1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.subLeftBan {
+    width:300px;
+    height:250px;
+    background:url('/static/img/subLeftBg.jpg') no-repeat; 
+}
+
+.subRightBan {
+    width:900px;
+    height:250px;
+    background:url('/static/img/subRightBg.jpg') no-repeat; 
+}
+
+.subRightBan1 {
+    width:900px;
+    height:250px;
+    background:url('/static/img/subRightBg1.jpg') no-repeat; 
+}
+
+.subRightBan2 {
+    width:900px;
+    height:250px;
+    background:url('/static/img/subRightBg2.jpg') no-repeat; 
+}
+
+.subRightBan3 {
+    width:900px;
+    height:250px;
+    background:url('/static/img/subRightBg3.jpg') no-repeat; 
+}
+
+.subSideMenu {
+    width:300px;
+    background:url('/static/img/submenubg.jpg'); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.sideNav {
+    display: flex;
+    justify-content: right;
+
+}
+
+.sideNav ul {
+    margin-top: 25px;
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sideNav ul li {
+    display: flex;
+    align-items: center;
+    height:50px;
+    list-style: none;
+    transition: 0.3s;
+}
+
+.sideNav ul li:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sidebot {
+    width: 300px;
+    height: 300px;
+}
+
+.subContent {
+    width:900px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.subcontext {
+    padding: 0 30px;
+    margin-top: 20px;
+}
+
+.subcontext p{
+    line-height: 180%;
+    font-size: 1.05rem;
+}
+
+.subcontext p span {
+    font-family: 'NotoSansKR-medium';
+    font-size: 1.1rem;
+}
+.subconbot {
+    display: flex;
+    height: 200px;
+    justify-content: left;
+    background:url('/static/img/contbg.jpg') no-repeat; 
+    background-position: right bottom;
+}
+.subconbot img {
+    margin-top: 20px;
+    margin-left: 80px;
+    height:100px;
+}
+
+/* ----------- sub introduce end ---------- */
+
+
+/* ----------- jakmyung form page  ---------- */
+
+.submitForm-wrap {
+    margin: 20px auto;
+    width: 700px;
+    
+}
+
+.submitForm-wrap form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.submitForm-wrap .requester-form-wrap {
+    border : 1px solid #e7e7e7;
+    box-sizing:border-box;
+    border-radius: 20px;
+    padding : 0px 40px;
+
+}
+
+.submitForm-wrap .requester-form-wrap .title,
+.submitForm-wrap .person-form-wrap .title {
+    position: relative;
+}
+
+
+
+.submitForm-wrap .requester-form-wrap .title::before,
+.submitForm-wrap .person-form-wrap .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 3px;
+    width: 60px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #a5a567, #905b11);
+}
+
+.submitForm-wrap .requester-form-wrap .title h3 span {
+    margin-left:30px;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.submitForm-wrap .requester-form-wrap .form-content {
+    margin-top:25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.submitForm-wrap .requester-form-wrap .form-content div {
+    width:100%;
+    display: flex;
+    justify-content: left;
+}
+
+.submitForm-wrap .requester-form-wrap .form-content div label {
+    width:150px;
+}
+
+.submitForm-wrap .requester-form-wrap .form-content div #id_category {
+    height:30px;
+    width:300px;
+}
+
+.submitForm-wrap .requester-form-wrap .form-content p {
+    width:100%;
+    display: flex;
+    justify-content: left;
+}
+
+.submitForm-wrap .requester-form-wrap .form-content p label {
+    width:150px;
+}
+
+.submitForm-wrap .requester-form-wrap .form-content p input {
+    width:300px;
+    height:30px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #535353;
+    outline: none;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-family: "NotoSansKR-light";
+
+}
+
+.submitForm-wrap .requester-form-wrap .form-content p textarea {
+    width:400px;
+    height:150px;
+    font-size: 1rem;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #535353;
+    outline: none;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.submitForm-wrap .requester-form-wrap .form-content p input:focus,
+.submitForm-wrap .requester-form-wrap .form-content p input:hover{
+    border-color:rgb(131, 63, 63);
+}
+
+.submitForm-wrap .person-form-wrap {
+    border : 1px solid #e7e7e7;
+    box-sizing:border-box;
+    border-radius: 20px;
+    padding : 0px 0px 30px 40px;
+}
+
+
+
+#person-form-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.submitForm-wrap .person-form-wrap .person-form {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.submitForm-wrap .person-form-wrap .person-form div {
+    display: flex;
+}
+
+.submitForm-wrap .person-form-wrap .person-form .label {
+    width:120px;
+}
+
+.submitForm-wrap .person-form-wrap .person-form .gen-radio{
+    width:180px;
+}
+
+.submitForm-wrap .person-form-wrap .person-form .sl-radio{
+    width:200px;
+}
+
+
+.submitForm-wrap .person-form-wrap .person-form .input{
+    width:180px;
+}
+
+.submitForm-wrap .person-form-wrap .person-form .input select{
+    font-size: 1rem;
+}
+
+.submitForm-wrap .submit-button-wrap{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.submitForm-wrap .submit-button-wrap button {
+    font-size: 1rem;
+    width: 90px;
+    height: 35px;
+}
+
+/* ----------- jakmyung form page end  ---------- */
+
+/* ----------- submit find form page start  ---------- */
+
+.find-form {
+    width:100%;
+    height:80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.find-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width:350px;
+    border: 1px solid #535353;
+    border-radius: 20px;
+    padding: 10px 30px;
+    box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
+}
+
+.find-form form h3{
+    position: relative;
+}
+
+.find-form form h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 3px;
+    width: 56px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #a5a567, #905b11);
+}
+
+.find-form form div {
+    display: flex;
+}
+
+.find-form form div .find-name{
+    align-self: center;
+    width:30%;
+    font-size: 1.1rem;
+}
+
+.find-form form input {
+    height:25px;
+    width:65%;
+    font-size: 1rem;
+}
+
+.find-form form button {
+    height:35px;
+    font-size: 1rem;
+    width:100px;
+    align-self: center;
+    margin: 10px 0;
+
+}
+/* ----------- submit find form page end  ---------- */
+
+/* ----------- submit check page start  ---------- */
+
+.submit-check-wrap{
+    margin: 0 auto;
+    width:90%;
+}
+
+.submit-check-wrap h2{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.submit-check-wrap h3{
+    position: relative;
+}
+
+.submit-check-wrap h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 3px;
+    width: 70px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #a5a567, #905b11);
+}
+
+.submit-check-wrap table{
+    margin: 0 auto;
+    width:80%;
+    border-spacing: 0;
+}
+
+.submit-check-wrap table th {
+    border-bottom: 1px solid #acacac;
+    padding:10px;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.submit-check-wrap table td {
+    border-bottom: 1px solid #acacac;
+    padding:10px;
+}
+
+.submit-check-wrap table .bold-underbar {
+    border-bottom: 1px ridge #000000;
+}
+
+.submit-check-wrap table td:nth-child(odd){
+    background-color: #fffaf2;
+    width: 130px;
+    text-align: center;
+}
+
+.submit-check-wrap div{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.submit-check-wrap div button{
+    width:100px;
+    font-size: 1rem;
+    height:40px;
+}
+
+
+/* ----------- saju form page start  ---------- */
+
+.submitForm-wrap .sjperson-form-wrap{
+    border : 1px solid #e7e7e7;
+    border-radius: 20px;
+}
+.submitForm-wrap .sjperson-form-wrap .title-wrap{
+    width:88%;
+    margin-left:40px; 
+    display: flex;
+    justify-content: space-between;
+    height:50px;
+}
+
+.submitForm-wrap .sjperson-form-wrap .title-wrap .title{
+    width:100%;
+    position: relative;
+}
+
+.submitForm-wrap .sjperson-form-wrap .title-wrap .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    height: 3px;
+    width: 70px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #a5a567, #905b11);
+}
+.submitForm-wrap .sjperson-form-wrap .title-wrap .mini-button-wrap{
+    width:300px;
+    height:50px;
+    display: flex;
+    justify-content: left;
+    align-items:flex-end;
+}
+
+.submitForm-wrap .sjperson-form-wrap .title-wrap .mini-button-wrap span{
+    margin-bottom: 3px;
+}
+
+.submitForm-wrap .sjperson-form-wrap #person-form-list{
+    width:90%;
+    margin:0 auto;
+}
+
+.submitForm-wrap .sjperson-form-wrap .person-form-sj {
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 25px;
+}
+
+.submitForm-wrap .sjperson-form-wrap .person-form-sj p:nth-of-type(1) input{
+    width:150px;
+}
+
+.submitForm-wrap .sjperson-form-wrap .person-form-sj *{
+    font-size: 1rem;
+}
+
+.submitForm-wrap .sjperson-form-wrap .person-form-sj .top-bar{
+    width:95%;
+    border-bottom: 1px solid #acacac;
+}
+
+.submitForm-wrap .sjperson-form-wrap .person-form-sj div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#add-more img {
+    width:20px;
+    height:20px;
+}
+
+#add-more {
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+#remove img {
+    width:20px;
+    height:20px;
+}
+
+#remove {
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+/* ----------- saju form page end  ---------- */
+

@@ -1,0 +1,28 @@
+{% extends 'mobile/main.html' %}
+{% load static %}
+{% block content %}
+<div class="wrap">
+    {% include 'mobile/header.html' %}
+    <div class="container">
+        <div class="conimg">
+            <img aria-label="conimage" src="{% static "img/m-maintext.png" %}" >            
+        </div>
+        
+        <div class="submit-check-wrap">
+            <h2 class="font-default"> "{{submit.name}}" 님의 "{{submit.category}}"<br> 신청을 삭제하겠습니까?</h2>
+            <div>
+                <form action='{% url 'm-delete-submit' %}' method="POST" autocomplete="off" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" name="pk" value="{{ submit.id }}">
+                    <button type="submit">네</button>
+                </form>
+                <a href="{{request.META.HTTP_REFERER}}"><button type="button">아니오</button></a>
+            </div>
+        </div>
+
+    </div>
+    {% include 'mobile/components/footer.html' %}
+
+</div>
+
+{% endblock content %}

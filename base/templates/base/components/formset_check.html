@@ -1,0 +1,33 @@
+<div class="submit-check-wrap">
+    <h3> 신청내용확인 </h3>
+    <table>
+        <tr><th colspan="2">신청인 정보</th></tr>
+        <tr><td>신청내용</td><td>{{submit.category}}</td></tr>
+        <tr><td>신청인 이름</td><td>{{submit.name}}</td></tr>
+        <tr><td>전화번호</td><td>{{submit.phonnumber}}</td></tr>
+        <tr><td>이메일</td><td>{{submit.email}}</td></tr>
+        <tr><td>상담담요청사항</td><td>{{submit.description|linebreaksbr}}</td></tr>
+    </table>
+    <table>
+        <tr><th colspan="4">대상자 인적사항</th></tr>
+        {% for person in persons %}
+        <tr><td>이 름</td><td>{{person.name}}</td><td>성 별</td><td>{{person.gen}}</td></tr>
+        <tr><td>양력/음력</td><td>{{person.sl}}</td><td>태어난 년(年)</td><td>{{person.year}}년</td></tr>
+        <tr><td>태어난 월(月)</td><td>{{person.month}}월</td><td>태어난 일(日)</td><td>{{person.day}}일</td></tr>
+        <tr><td class="bold-underbar">시 간</td><td colspan="3" class="bold-underbar">{{person.time}}</td></tr>
+        {% endfor %}
+    </table>
+    <div>
+        <a href="{% url 'home' %}"><button type="button">홈으로</button></a>
+        <form action='{% url 'edit-submit-sj' %}' method="GET" autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" name="pk" value="{{ submit.id }}">
+            <button type="submit">수정하기</button>
+        </form>
+        <form action='{% url 'delete-submit' %}' method="GET" autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" name="pk" value="{{ submit.id }}">
+            <button type="submit">신청취소</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{% load static %}
+<div class="header">
+    <div class="header_wrap">
+        <div id="nav-underline"></div>
+        <div class="logo">
+            <a href="{% url "home" %}"><img aria-label="main banner" src="{% static "img/dwlogo.png" %}" ></a>
+        </div>
+        <div class="nav">
+            <ul>                    
+                <li><a href="{% url "sub-intro" %}">작명원소개</a></li>
+                <li><a href="{% url "about-naming" %}">도원성명학</a></li>
+                <li><a href="{% url "about-saju" %}">도원사주학</a></li>
+                <li><a href="{% url "about-jm" %}">작명절차안내</a></li>
+                <li><a href="{% url "submit-jm" %}">작명신청하기</a></li>
+                <li><a href="{% url "submit-gm" %}">개명신청하기</a></li>
+                <li><a href="{% url "submit-sj" %}">사주/궁합</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

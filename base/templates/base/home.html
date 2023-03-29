@@ -1,0 +1,181 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div class="wrap">
+    {% include 'header.html' %}
+
+    <div class="container">
+        <div class="main_con">
+            <div class="banner_con">
+                <img aria-label="main banner text" src="{% static 'img/main_banner_con.png' %}">
+            </div>
+            <div class="con_nav">
+                <ul>
+                    <a href="{% url "submit-jm" %}"><li>신생아작명신청</li></a>
+                    <a href="https://blog.naver.com/ocean3885" target="_blank"><li>도원블로그</li></a>
+                    <a href="#"><li>도원만세력</li></a>
+                    <a href="{% url "submit-sj" %}"><li>사주상담신청</li></a>
+                    <a href="{% url 'find-submit' %}"><li>신청확인하기</li></a>
+                </ul>
+            </div>
+            <div class="contents_con">
+                <div id="left-con-wrap">
+                    <div class="lcon-div">
+                        <a href={% url 'sub-intro'%}>
+                        <div class="lcon_img"><img aria-label="con banner 1" src="{% static 'img/leftcon1.jpg' %}"></div>
+                        <div class="lcon_text">
+                            <div>작명원소개</div>
+                            <span>도원사주작명원에 방문해 주신 여러분 반갑습니다. 도원사주작명원 원장 김종찬 입</span>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="lcon-div">
+                        <a href={% url 'certification' %}>
+                        <div class="lcon_img"><img aria-label="con banner 2" src="{% static 'img/leftcon2.jpg' %}"></div>
+                        <div class="lcon_text">
+                            <div>작명인증서</div>
+                            <span>정해진 이름에 대한 자세한 설명이 포함된 인증서를 신청하여 받아보실수 있습니다.</span>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="lcon-div">
+                        <a href={% url 'about-naming' %}>
+                        <div class="lcon_img"><img aria-label="con banner 3" src="{% static 'img/leftcon3.jpg' %}"></div>
+                        <div class="lcon_text">
+                            <div>도원성명학</div>
+                            <span>선천적으로 타고난 운기(運氣)가 성명의 글자에 작용하는 영향력을 통하여 보완되는</span>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="lcon-div">
+                        <a href={% url 'submit-info' %}>
+                        <div class="lcon_img"><img aria-label="con banner 4" src="{% static 'img/leftcon4.jpg' %}"></div>
+                        <div class="lcon_text">
+                            <div>신청방법안내</div>
+                            <span>신청내용에 맞는 신청서를 작성하여 제출하시면 입금확인후 절차가 진행됩니다.</span>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="lcon-div">
+                        <a href={% url 'about-saju' %}>
+                        <div class="lcon_img"><img aria-label="con banner 5" src="{% static 'img/leftcon5.jpg' %}"></div>
+                        <div class="lcon_text">
+                            <div>도원사주학</div>
+                            <span>사주팔자를 오행의 생극화합의 원리, 십간의 5합, 12지의 형충회합 등을 분석하여 </span>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="lcon-div">
+                        <a href={% url 'about-jm' %}>
+                        <div class="lcon_img"><img aria-label="con banner 6" src="{% static 'img/leftcon6.jpg' %}"></div>
+                        <div class="lcon_text">
+                            <div>작명절차안내</div>
+                            <span>사주를 분석하여 부족한 부분을 보완해주는 최적의 이름을 5개 지어드립니다. </span>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="right_con">
+                    <div><img aria-label="right con banner" src="{% static 'img/rightbg.jpg' %}"></div>                    
+                </div>
+
+                                
+                <div id="down_con">
+                    <div class="downDiv1">
+                        <ul class="tab-btn">
+                            <li class="active" data-tab="tab1">도원 성명학</li>
+                            <li data-tab="tab2">도원 사주학</li>
+                            <li data-tab="tab3">유명인 사주</li>
+                            <li data-tab="tab4">일주론</li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab1" class="tab active">
+                                <div class="tabImage">
+                                    <img aria-label="tapImg1" src="{% static 'img/tapImg.jpg' %}">
+                                </div>
+                                <div class="tabText">
+                                    <a href="https://blog.naver.com/ocean3885/221657675907" target="_blank">
+                                    <h2>이름에 좋은 기운을 담아</h2>
+                                    <p>
+                                        계사(癸巳) 일주(日柱)에 임진년(壬辰年), 기유월(己酉月), 병진시(丙辰時)를 받은 
+                                        사주(四柱)입니다. 계사(癸巳) 일주(日柱)인데 계수(癸水)가 사화(巳火)를 자합(自合)하는 
+                                        구조이고 사(巳)가 시(時)에 병(丙)으로 올라와 있습니다. 이는 주된 관심사가 재물
+                                        (財物)과 관련된 상(像)이고 병화(丙火)가 관(官)인 진토(辰土)를 ... more
+                                    </p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="tab2" class="tab">
+                                <div class="tabImage">
+                                    <img aria-label="tapImg1" src="{% static 'img/tapImg1.jpg' %}">
+                                </div>
+                                <div class="tabText">
+                                    <a href="https://blog.naver.com/ocean3885/221547432032" target="_blank">
+                                    <h2>진로(직업,적성)갈등 상담</h2>
+                                    <p>
+                                        사람마다 본인이 추구하는 바가 다른데요 그에 대한 정보가 사주속에 담겨져 있습니다. 
+                                        그것이 돈이 될 수도 있고 명예, 공직 혹은 예술적인 끼를 발산하는 것 일 수도 있습니다. 
+                                        그러나 서로 상반되는 사주 의향이 잠재 되어 있다가 대운이나 세운의 변화때 기운을 얻어 
+                                        드러나는 경우 기존의 가치관이나 행동양식과 다른  ... more
+                                    </p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="tab3" class="tab">
+                                <div class="tabImage">
+                                    <img aria-label="tapImg1" src="{% static 'img/tapImg2.jpg' %}">
+                                </div>
+                                <div class="tabText">
+                                    <a href="https://blog.naver.com/ocean3885/221401284720" target="_blank">
+                                    <h2> 故이민혜 선수의 사주</h2>
+                                    <p>
+                                        계수(癸水) 일주인데 월의 병(丙)은 재물인데 병화가 술(戌)을 생하니 대상이 됩니다. 
+                                        즉 재(財)와 관(官)이 하나가 되니 노력으로 보상받는 명예와 재물을 상징합니다. 
+                                        년의 을축(乙丑)은 을목이 식신으로 본인의 재능과 사상(思想)인데 년의 외곽 문호도로에서 
+                                        행하게 됩니다. 축(丑)속에는 본인의 체에 해당하는 계수(癸水)가  ... more
+                                    </p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="tab4" class="tab">
+                                <div class="tabImage">
+                                    <img aria-label="tapImg1" src="{% static 'img/tapImg3.jpg' %}">
+                                </div>
+                                <div class="tabText">
+                                    <a href="https://blog.naver.com/ocean3885/221401060102" target="_blank">
+                                    <h2>을축(乙丑) 일주(日柱)에 대하여</h2>
+                                    <p>
+                                        을축(乙丑)일주의 을(乙)은 새싹이자 나무입니다. 십이운성 상으로는 쇠(衰)지에 거하고 
+                                        또한 축은 관(官)의 묘(墓)이자 고(庫)입니다. 십신으로는 편재에 해당합니다. 긴긴 겨울의 
+                                        추위를 견디고 풋풋한 새싹을 내미는 을축일주는 인내심의 달인으로서 강한 생명력이 
+                                        장점입니다.을축(乙丑)은 을목이 축토 편재를 본 일주입니다.  ... more
+                                    </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="downDiv2">
+                        <img aria-label="down righ bg" src="{% static 'img/downrightbg.jpg' %}">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        {% include 'footer.html' %}
+    </div>
+</div>
+
+<script>
+    // 탭메뉴 관련
+    $('.tab-btn li').click(function(){
+    var name = $(this).attr('data-tab');
+    $(this).addClass('active')
+    $(this).siblings('.tab-btn li').removeClass('active')
+
+    $("#"+name).addClass('active').siblings('div').removeClass('active');
+
+    })
+</script>
+
+{% endblock content %}

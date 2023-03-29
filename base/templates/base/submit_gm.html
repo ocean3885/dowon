@@ -1,0 +1,77 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="wrap">
+    {% include 'header.html' %}
+
+    <div class="container">
+        <div class="subCent">
+            <div class="subLeftBan"></div>
+            <div class="subRightBan"></div>
+        </div>
+        <div class="subCent">
+            {% include 'base/components/sub_sidemenu2.html' %}
+            <div class="subContent">
+                <div class="submitForm-wrap">
+                    <form method="POST" autocomplete="off" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        <div class="requester-form-wrap">
+                            <div class="title">
+                                <h3>신청인 정보<span> 신청서 조회시 이름과 전화번호가 사용되므로 정확히 입력해주시기 바랍니다.</span></h3>
+                            </div>
+                            <div class='form-content'>
+                                {{ form1.as_p }}
+                            </div>
+                        </div>
+                        <div class="person-form-wrap">
+                            <div class="title">
+                                <h3>개명대상자 인적사항</h3>
+                            </div>
+                            <div class="person-form">
+                                <div>
+                                    <div class="label">{{form2.gen.label}} : </div>
+                                    <div class="gen-radio">{{form2.gen}}</div>
+                                </div>
+                                <div>
+                                    <div class="label">{{form2.sl.label}} : </div>
+                                    <div class="sl-radio">{{form2.sl}}</div>
+                                </div>
+                                <div>
+                                    <div class="label">{{form2.year.label}} : </div>
+                                    <div class="input">{{form2.year}}</div>
+                                </div>
+                                <div>
+                                    <div class="label">{{form2.month.label}} : </div>
+                                    <div class="input">{{form2.month}}</div>
+                                </div>
+                                <div>
+                                    <div class="label">{{form2.day.label}} : </div>
+                                    <div class="input">{{form2.day}}</div>
+                                </div>
+                                <div>
+                                    <div class="label">{{form2.time.label}}</div>
+                                    <div class="input">{{form2.time}}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="submit-button-wrap">
+                            {% if person %}
+                            <button type="submit">수정완료</button>
+                            {% else %}
+                            <button type="submit">신청하기</button>
+                            {% endif %}
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        {% include 'footer.html' %}
+
+    </div>
+</div>
+
+{% endblock content %}
