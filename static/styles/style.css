@@ -5,24 +5,20 @@
 @font-face {font-family: 'NotoSansKR-bold';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
 @font-face {font-family: 'NotoSansKR-black';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
 
-
-
-
 a:link { color: black; text-decoration: none;}
 a:visited { color: black; text-decoration: none;}
 
-#id_gen {
-    list-style : none;
-    margin:0;
-    padding:0;
-        
+#id_gen {list-style : none;margin:0;padding:0;display:flex;}
+#id_sl {list-style : none;margin:0;padding:0;display:flex;}
+#id_category {list-style : none;margin:0;padding:0;display:flex;gap:10px;}
+.person-form-sj ul {list-style : none;margin:0;padding:0;display:flex;}
+.person-form-sj ul li {align-self:center;}
+.personal-info {
+    display : flex;
+    justify-content : center;
+    gap : 10px;    
 }
-
-#id_sl {
-    list-style : none;
-    margin:0;
-    padding:0;
-}
+.personal-info input {width:18px;height:18px;}
 
 .font-default{
     font-size: 1.3rem;
@@ -49,10 +45,9 @@ body {
     width: 100%;
     min-width: 1200px;
     margin: 0 auto;
-
 }
 
-/* ---------  header start --------- */
+/* ----------  header start ---------- */
 
 .header {
     width: 100%;
@@ -101,7 +96,6 @@ body {
     transition: 0.5s;
     background-color: rgb(152, 136, 136);
     top:69;
-
 }
 
 .nav > ul > li {    
