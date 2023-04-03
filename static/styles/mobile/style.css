@@ -9,6 +9,105 @@
 a {color:rgb(0, 0, 0);text-decoration: none; outline: none}
 a:hover, a:active {text-decoration: none; color:rgb(0, 0, 0); background-color:#ffffff;}
 
+
+/* ----------  홈 배너링크 반응형 시작  ---------- */
+
+.downDiv2 {
+    align-self:center;
+    display:flex;
+    justify-content:center;
+    width:80%;
+    max-width:640px;
+}
+
+.downDiv2 img {
+    width:100%;    
+}
+
+
+#right_con {
+    align-self:center;
+    display:flex;
+    justify-content:center;
+    background-color:rgb(242, 241, 237);
+    width:80%;
+    border-radius:20px;
+    max-width:640px;
+    margin: 20px 0;
+}
+
+#right_con img {
+    border-radius:20px;
+    width:100%;    
+}
+
+
+#left-con-wrap {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.lcon-div {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width:80%;
+    max-width:308px;
+    overflow: hidden;
+    border: 1px solid #e6e6e6;
+}
+
+
+.lcon_img {
+    overflow: hidden;
+    height:110px;
+}
+
+.lcon_img img {
+    width:100%;
+}
+
+.lcon_text {
+    font-size: 1.01rem;
+    padding : 8px;
+}
+
+.lcon_text div {
+    border: 1px dashed rgb(168, 168, 168);
+    padding: 2px 15px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.lcon_text span {
+    font-family: 'NotoSansKR-light';
+    font-size: 0.9rem;
+}
+
+/* ----------  홈 배너링크 반응형 끝  ---------- */
+
+
+/* ----------  신청서 폼 스타일 조정 시작  ---------- */
+
+#id_gen {list-style : none;margin:0;padding:0;display:flex;}
+#id_sl {list-style : none;margin:0;padding:0;display:flex;}
+#id_category {list-style : none;margin:0;padding:0;display:flex;gap:10px;}
+.person-form-sj ul {list-style : none;margin:0;padding:0;display:flex;}
+.person-form-sj ul li {align-self:center;}
+.personal-info {
+    display : flex;
+    justify-content : center;
+    gap : 10px;    
+}
+.personal-info input {width:18px;height:18px;}
+
+/* ----------  신청서 폼 스타일 조정 끝  ---------- */
+
 .hidden {display:none;}
 
 select {
@@ -789,16 +888,6 @@ input[name="tab_item"] {
 /* ----------- sub intro page start  ---------- */
 
 
-.con-img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.subContent img {
-    margin-left:10px;
-    width:60%;
-    height:auto;
-}
 .subcontext {
     padding: 0 20px;
     margin-top: 20px;
@@ -813,6 +902,12 @@ input[name="tab_item"] {
     font-family: 'NotoSansKR-medium';
     font-size: 1.1rem;
 }
+
+.subContent img {
+    width:100%;
+    height:auto;
+}
+
 .subconbot {
     display: flex;
     height: 100px;
@@ -939,5 +1034,7 @@ input[name="tab_item"] {
     #id_category{left:145px;}
     .mini-button-wrap {right:10px}    
     .subContent img {width:300px;}
+    .lcon-div {width:40%;}
+    .lcon_img {height:auto;max-height:110px;}
 
 }

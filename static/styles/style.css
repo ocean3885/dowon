@@ -8,6 +8,41 @@
 a:link { color: black; text-decoration: none;}
 a:visited { color: black; text-decoration: none;}
 
+/* ----------  작명절차안내 페이지 시작  ---------- */
+
+.sub-page1 div {
+    display:flex;
+    justify-content:center;
+}
+
+#procedure {
+    margin-top:10px;
+    width:95%;
+    height:auto;
+}
+
+.procedure_down {
+    display:flex;
+    justify-content:center;
+}
+
+.procedure_down img {
+    width:300px;
+    height:auto;
+    border-radius:10px;
+    margin: 50px 30px;
+    box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
+}
+
+/* ----------  작명절차안내 페이지 끝  ---------- */
+
+
+
+
+/* ----------  신청서 폼 스타일 조정 시작  ---------- */
+
 #id_gen {list-style : none;margin:0;padding:0;display:flex;}
 #id_sl {list-style : none;margin:0;padding:0;display:flex;}
 #id_category {list-style : none;margin:0;padding:0;display:flex;gap:10px;}
@@ -19,6 +54,8 @@ a:visited { color: black; text-decoration: none;}
     gap : 10px;    
 }
 .personal-info input {width:18px;height:18px;}
+
+/* ----------  신청서 폼 스타일 조정 끝  ---------- */
 
 .font-default{
     font-size: 1.3rem;

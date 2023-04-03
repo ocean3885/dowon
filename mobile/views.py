@@ -13,8 +13,17 @@ def m_sub_intro(request):
 def m_about_jm(request):
     return render(request, 'mobile/m_about_jm.html')
 
+def m_about_sj(request):
+    return render(request, 'mobile/m_about_sj.html')
+
+def m_about_naming(request):
+    return render(request, 'mobile/m_about_naming.html')    
+
 def m_certification(request):
     return render(request, 'mobile/m_certification.html')
+
+def m_submit_info(request):
+    return render(request, 'mobile/m_submit_info.html')
 
 
 def m_submit_jm(request):

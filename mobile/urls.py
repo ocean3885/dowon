@@ -14,5 +14,8 @@ urlpatterns = [
     path('m-find-submit/', views.m_find_submit, name="m-find-submit"),
     path('m-sub-intro/', views.m_sub_intro, name="m-sub-intro"),
     path('m-about-jm/', views.m_about_jm, name="m-about-jm"),
+    path('m-about-naming/', views.m_about_naming, name="m-about-naming"),
+    path('m-about-sj/', views.m_about_sj, name="m-about-saju"),
     path('m-certification/', views.m_certification, name="m-certification"),
+    path('m-submit-info', views.m_submit_info, name="m-submit-info"),
 ]
