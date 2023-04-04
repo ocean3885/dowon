@@ -3,7 +3,9 @@ from django.forms.models import modelformset_factory
 from .forms import JmSubmitForm, GmSubmitForm, PersonForm, SjSubmitForm, SjPersonForm
 from .models import Submit, Person
 
-def home(request):
+def home(request):   
+    real_ip = request.META.get('HTTP_X_REAL_IP')
+    print(real_ip)
     if request.user_agent.is_pc:
         return render(request, 'base/home.html')
     else:
