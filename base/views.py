@@ -4,13 +4,10 @@ from .forms import JmSubmitForm, GmSubmitForm, PersonForm, SjSubmitForm, SjPerso
 from .models import Submit, Person
 
 def home(request):   
-    real_ip = request.META.get('HTTP_X_REAL_IP')
-    print(real_ip)
     if request.user_agent.is_pc:
         return render(request, 'base/home.html')
     else:
         return render(request, 'mobile/m_home.html')
-
 
 def sub_intro(request):
     return render(request, 'base/sub_intro.html')

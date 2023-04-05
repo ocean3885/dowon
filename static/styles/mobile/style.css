@@ -9,6 +9,21 @@
 a {color:rgb(0, 0, 0);text-decoration: none; outline: none}
 a:hover, a:active {text-decoration: none; color:rgb(0, 0, 0); background-color:#ffffff;}
 
+/* ----------  홈 링크 페이드인아웃 효과 시작 ---------- */
+
+
+.hide {
+    opacity:0;
+    transition: all 1s;
+    transform: translateY(5%);
+}
+
+.show {
+    opacity:1;
+    transform: translateY(0);
+}
+
+/* ----------  홈 링크 페이드인아웃 효과 끝 ---------- */
 
 /* ----------  홈 배너링크 반응형 시작  ---------- */
 
@@ -61,7 +76,6 @@ a:hover, a:active {text-decoration: none; color:rgb(0, 0, 0); background-color:#
     overflow: hidden;
     border: 1px solid #e6e6e6;
 }
-
 
 .lcon_img {
     overflow: hidden;
@@ -246,6 +260,10 @@ body {
 .sideonbg {position:absolute;width:100%;max-width:960px;height:100%;visibility: hidden;
     background-color: rgb(143, 143, 143);top:53px;opacity:0;transition: 0.5s;}
     
+@media (max-height:420px){
+    #menu-toggle:checked ~ .sidebar {height: calc(100vh - 65px);}
+}
+
 .sidebar ul {
     margin:0;
     padding:0;
