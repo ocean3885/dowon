@@ -12,6 +12,20 @@
              {% include 'base/components/sub_sidemenu2.html' %}
             <div class="subContent">
                 <div class="find-form">
+                    {% if nosubmit %}
+                        <div>
+                            <h3>
+                                <font color="red">"신청내역이 없습니다. 이름과 전화번호를 정확하게 입력해주세요"</font>
+                            </h3>
+                        </div>
+                    {% else %}
+                        <div>
+                            <h3>
+                                신청인의 이름과 전화번호를 정확하게 입력해주시기 바랍니다.
+                            </h3>
+                        </div>
+                    {% endif %}
+                    
                     <form method="POST" autocomplete="off" enctype="multipart/form-data">
                     {% csrf_token %}
                         <h3>신청서 확인하기</h3>

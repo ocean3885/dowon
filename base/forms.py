@@ -67,7 +67,17 @@ class JmSubmitForm(ModelForm):
                 }
             ),
         }
-
+        
+    def clean_phonnumber(self,*args,**kwargs):
+        phonnumber = self.cleaned_data.get("phonnumber")
+        if len(phonnumber) < 10:
+            raise forms.ValidationError("'010'을 포함하여 10자리 이상의 숫자로 입력해주시기 바랍니다.")
+        if phonnumber.isdigit():
+            return phonnumber
+        else:
+            raise forms.ValidationError("'-'하이픈을 제외하고 숫자로만 입력해주시기 바랍니다.")
+        
+                
 
 class PersonForm(ModelForm):
     

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_user_agents',
     'widget_tweaks',
+    'twilio',
     'base',
     'mobile',
     'msr_database',

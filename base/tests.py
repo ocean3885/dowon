@@ -1,3 +1,13 @@
 from django.test import TestCase
 
-# Create your tests here.
+
+
+num = "010123458"
+
+if num.isdigit():
+    print("숫자")
+else:
+    print("문자포함")
+
+
+

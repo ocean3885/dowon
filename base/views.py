@@ -2,6 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.forms.models import modelformset_factory
 from .forms import JmSubmitForm, GmSubmitForm, PersonForm, SjSubmitForm, SjPersonForm
 from .models import Submit, Person
+import os
+from twilio.rest import Client
+account_sid = "ACb7c759d083e6fa63272fa37f93de1040"
+auth_token = "4a42c1fe16c4dc9e715be5e9a071c68e"
+client = Client(account_sid, auth_token)
 
 def home(request):   
     if request.user_agent.is_pc:
@@ -39,7 +44,17 @@ def submit_jm(request):
             person.submit = obj
             person.save()
             context = {'submit':obj,'person':person}
+            # message = client.messages.create(
+            #   body="작명신청이 접수되었습니다.",
+            #   from_="+15673811669",
+            #   to="+821022324548"
+            # )
+            # print(message.sid)
             return render(request,'base/submit_complete.html',context)
+        else:
+            context = {'form1': form1, 'form2':form2}
+            return render(request,'base/submit_jm.html',context)
+
     form1 = JmSubmitForm()
     form2 = PersonForm()
     context = {'form1': form1, 'form2':form2}
@@ -121,7 +136,8 @@ def find_submit(request):
         f_number = request.POST.get('f_number')
         obj_count = Submit.objects.filter(name=f_name, phonnumber=f_number).count()
         if obj_count == 0:
-            pass
+            context = { 'nosubmit': 1}
+            return render(request,'base/find_submit.html', context)
 
         elif obj_count == 1:
             obj1 = Submit.objects.get(name=f_name, phonnumber=f_number)
