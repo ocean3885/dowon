@@ -4,8 +4,10 @@ from .forms import JmSubmitForm, GmSubmitForm, PersonForm, SjSubmitForm, SjPerso
 from .models import Submit, Person
 import os
 from twilio.rest import Client
+from dowon.settings import get_secret
+
 account_sid = "ACb7c759d083e6fa63272fa37f93de1040"
-auth_token = "4a42c1fe16c4dc9e715be5e9a071c68e"
+auth_token = get_secret("AUTH_TOKEN")
 client = Client(account_sid, auth_token)
 
 def home(request):   
