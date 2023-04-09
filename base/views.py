@@ -15,6 +15,9 @@ def home(request):
         return render(request, 'base/home.html')
     else:
         return render(request, 'mobile/m_home.html')
+    
+def pc_home(request):
+    return render(request, 'base/home.html')    
 
 def sub_intro(request):
     return render(request, 'base/sub_intro.html')

@@ -9,6 +9,96 @@
 a {color:rgb(0, 0, 0);text-decoration: none; outline: none}
 a:hover, a:active {text-decoration: none; color:rgb(0, 0, 0); background-color:#ffffff;}
 
+.errorlist {
+    color : red;
+}
+
+/* ----------  하단 계좌 및 전화 정보 시작 ---------- */
+
+.account-info {
+    display: flex;
+    width: 100%;
+    border-top:solid 2px #393939;    
+}
+
+.account-info #cs-wrap, .account-info #bank-wrap{
+    display:flex;
+    justify-content:center;
+    width: 50%;
+}
+
+.account-info #cs, .account-info #bank{
+    display:flex;
+    flex-direction:column;    
+}
+
+.account-info .t1 {
+    position:relative;
+    padding-bottom: 2px;
+    margin-bottom:11px;
+    margin-top:11px;
+    font-size: 1.167em;
+    font-weight: 900;
+    color: #444;
+    letter-spacing: -0.010em;
+}
+
+.account-info .t1::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #444;
+}
+
+.account-info .t1 span{
+    font-weight: 400;
+    font-size: 1em;
+}
+
+
+.account-info .t2 {
+    font-size: 0.917em;
+    color: #333;
+    width: 100%;
+    min-width:141px;
+    margin-bottom:10px;
+}
+
+
+.account-info #bank .nh {
+    border: solid 1px #ccc;
+    height: 26px;
+    min-width:125px;
+    color: #444;
+    letter-spacing: -0.020em;
+    font-size: 1em;
+    font-weight: 300;
+    padding: 0 6px;
+    background-color: #f5f5f5;
+    padding-left: 28px;
+    background: #f5f5f5 url('/static/img/nhlogo.png') no-repeat;
+    background-position: 6px 50%;
+    background-size: 15px 16px;
+}
+
+.account-info #cs .tel {
+    height: 26px;
+    color: #8b4513;
+    letter-spacing: -0.010em;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding-left: 27px;
+    background: url('/static/img/phonecall.png') no-repeat center left;
+    background-size: 23px 23px;
+    margin-bottom: 20px;
+}
+
+/* ----------  하단 계좌 및 전화 정보 끝 ---------- */
+
+
 /* ----------  홈 링크 페이드인아웃 효과 시작 ---------- */
 
 
@@ -26,19 +116,6 @@ a:hover, a:active {text-decoration: none; color:rgb(0, 0, 0); background-color:#
 /* ----------  홈 링크 페이드인아웃 효과 끝 ---------- */
 
 /* ----------  홈 배너링크 반응형 시작  ---------- */
-
-.downDiv2 {
-    align-self:center;
-    display:flex;
-    justify-content:center;
-    width:80%;
-    max-width:640px;
-}
-
-.downDiv2 img {
-    width:100%;    
-}
-
 
 #right_con {
     align-self:center;

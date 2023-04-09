@@ -14,15 +14,14 @@
         <div id="left-con-wrap">
             {% include 'mobile/components/sixlinks.html' %}
         </div>
-        
-        <div class="downDiv2">
-            <img aria-label="down righ bg" src="{% static 'img/downrightbg.jpg' %}">
-        </div>
-        
+                
         <div id="right_con">
             <div><img aria-label="right con banner" src="{% static 'img/rightbg.jpg' %}"></div>                    
         </div>
         
+        <div class="account-info">
+            {% include 'mobile/components/account_info.html' %}            
+        </div>
         
     </div>
     {% include 'mobile/components/footer.html' %}

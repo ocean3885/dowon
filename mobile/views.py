@@ -39,6 +39,9 @@ def m_submit_jm(request):
             person.save()
             context = {'submit':obj,'person':person}
             return render(request,'mobile/m_submit_complete.html',context)
+        else:
+            context = {'form1': form1, 'form2':form2}
+            return render(request,'mobile/m_submit_jm.html',context)
     form1 = JmSubmitForm()
     form2 = PersonForm()
     context = {'form1': form1, 'form2':form2}
