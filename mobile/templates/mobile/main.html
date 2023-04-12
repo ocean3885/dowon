@@ -13,10 +13,14 @@
     <title>도원사주작명원</title>
 </head>
 <body>
+    <div class="wrap">
+        {% include 'mobile/header.html' %}
 
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
 
+        {% include 'mobile/components/footer.html' %}
+    </div>
     <script src="{% static 'styles/mobile/script.js' %}"></script>
 </body>
 </html>

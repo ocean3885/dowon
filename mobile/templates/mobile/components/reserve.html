@@ -1,0 +1,14 @@
+{% load static %}
+
+<div class="res-left">
+    <a href="https://m.booking.naver.com/booking/6/bizes/167387?tr=bnm" target="_blank">
+        <div>네이버 예약</div>
+        <img src="{% static 'img/naver_book_logo.png'%}">
+    </a>    
+</div>
+<div class="res-right">
+    <a href="{% url 'm-about-way' %}" >
+        <div>오시는 길</div>        
+        <img aria-label="reserve icon" src="{% static 'img/map_logo.png' %}">
+    </a>
+</div>

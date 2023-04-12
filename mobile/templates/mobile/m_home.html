@@ -1,31 +1,39 @@
 {% extends 'mobile/main.html' %}
 {% load static %}
 {% block content %}
-<div class="wrap">
-    {% include 'mobile/header.html' %}
-    <div class="container">
-        <div class="conimg">
-            <img aria-label="conimage" src="{% static "img/m-maintext.png" %}" >            
-        </div>
-        <div class="downDiv1">
-            {% include 'mobile/components/tap_menu.html' %}
-        </div>
-        
-        <div id="left-con-wrap">
-            {% include 'mobile/components/sixlinks.html' %}
-        </div>
-                
-        <div id="right_con">
-            <div><img aria-label="right con banner" src="{% static 'img/rightbg.jpg' %}"></div>                    
-        </div>
-        
-        <div class="account-info">
-            {% include 'mobile/components/account_info.html' %}            
-        </div>
-        
+
+<div class="container">
+    <div class="conimg">
+        <img aria-label="conimage" src="{% static 'img/m-maintext.png' %}" >            
     </div>
-    {% include 'mobile/components/footer.html' %}
+    <div class="downDiv1">
+        {% include 'mobile/components/tap_menu.html' %}
+    </div>
+
+    <div id="left-con-wrap">
+        {% include 'mobile/components/sixlinks.html' %}
+    </div>
+
+    <div id="right_con">
+        <div><img aria-label="right con banner" src="{% static 'img/rightbg.jpg' %}"></div>                    
+    </div>
     
+    <div class="ban-section">
+        {% include 'mobile/components/ban_section.html' %}            
+    </div>
+
+    <div class="intro-section">
+        {% include 'mobile/components/intro_section.html' %}            
+    </div>
+
+    <div class="reserve">
+        {% include 'mobile/components/reserve.html' %}            
+    </div>
+
+    <div class="account-info">
+        {% include 'mobile/components/account_info.html' %}            
+    </div>
+
 </div>
 
 {% endblock content %}

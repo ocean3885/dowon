@@ -4,6 +4,8 @@ import datetime
 from .models import Submit, Person
 
 class JmSubmitForm(ModelForm):
+    
+    field_order = ['name', 'phonnumber', 'email', 'adress', 'first_name_ch', 'fav_name', 'avoid_name', 'parents_name', 'description']
 
     class Meta:
         model = Submit
@@ -110,10 +112,12 @@ class PersonForm(ModelForm):
         model = Person
         exclude = ['submit','name']
         labels = {
-            "time": "태어난 시간 : ",
+            "time": "태어난 시간 ",
         }
 
 class GmSubmitForm(ModelForm):
+    
+    field_order = ['name', 'phonnumber', 'email', 'adress', 'first_name_ch', 'fav_name', 'avoid_name', 'parents_name', 'description']
 
     class Meta:
         model = Submit

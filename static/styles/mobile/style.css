@@ -1,10 +1,7 @@
-@font-face {font-family: 'NotoSansKR-thin';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
 @font-face {font-family: 'NotoSansKR-light';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
 @font-face {font-family: 'NotoSansKR-regular';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
 @font-face {font-family: 'NotoSansKR-medium';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
 @font-face {font-family: 'NotoSansKR-bold';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
-@font-face {font-family: 'NotoSansKR-black';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
-
 
 a {color:rgb(0, 0, 0);text-decoration: none; outline: none}
 a:hover, a:active {text-decoration: none; color:rgb(0, 0, 0); background-color:#ffffff;}
@@ -12,6 +9,276 @@ a:hover, a:active {text-decoration: none; color:rgb(0, 0, 0); background-color:#
 .errorlist {
     color : red;
 }
+
+.hidden {display:none;}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #444;
+    background-color: #fff;
+    padding: 0.2em 2.5em 0.2em 0.5em;
+    margin: 0;
+    border: 1px solid #aaa;
+    border-radius: 0.2em;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 0.65rem auto;
+}
+
+select:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+    box-shadow: 0 0 0 3px;
+    color: rgb(83, 83, 83);
+    outline: none;
+}
+
+button {
+    border: 1px solid #acacac;
+    border-radius: 5px;
+    color:rgb(0, 0, 0);
+    background-color: #ececec;
+    font-weight: 400;
+}
+
+html {
+    font-family: 'NotoSansKR-regular', sans-serif;
+    font-size: 15px;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    line-height: normal;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+}
+
+.wrap {
+    max-width: 960px;
+    min-width: 320px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* ----------  서브타이틀 컴포넌트 시작 ---------- */
+
+.sub-title {
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.sub-title .t1-wrap {
+    width:90%;
+    border-bottom: 2px solid #e3e3e3;
+}
+
+.sub-title .t1 {
+    font-size:1.2rem;
+    margin: 10px 0 5px 0 ;
+    letter-spacing: 3px;
+    position:relative;
+    font-family: 'Noto Serif KR', serif;
+    font-weight:500;
+}
+
+.sub-title .t1::before {
+    position: absolute;
+    top: 0;
+    left: -5px;
+    content: "";
+    font-size: 0.75em;
+    opacity:40%;
+    width:13px;
+    height:13px;
+    background: rgb(216, 108, 103);
+}
+
+/* ----------  서브타이틀 컴포넌트 끝 ---------- */
+
+
+
+/* ----------  작명절차안내 페이지 시작 ---------- */
+
+.blank-space{
+    width:100%;
+    height:1px;
+    margin: 8px 0;
+}
+
+/* ----------  작명절차안내 페이지 끝 ---------- */
+
+
+/* ----------  홈 신청하기 배너섹션 시작 ---------- */
+
+.ban-section {
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.ban-wrap {
+    display:flex;
+    gap:10px;
+    width:90%;
+    flex-direction:column;
+}
+
+@media (min-width:600px){
+    .ban-wrap {flex-direction:row;}
+}
+
+.ban-wrap .ban1-wrap, .ban-wrap .ban2-wrap {
+    display:flex;
+    gap:10px;
+    width:100%;
+    justify-content:space-around;
+}
+
+.ban-wrap .ban1-wrap a:first-child {
+    background: #f8f9fb url('/static/img/jm_logo.jpg') no-repeat;
+    background-size: 60px 62px;
+    background-position: right 12px bottom 16px;
+}
+
+.ban-wrap .ban1-wrap a:nth-child(2) {
+    background: #f8f9fb url('/static/img/gm_logo.jpg') no-repeat;
+    background-size: 60px 62px;
+    background-position: right 12px bottom 16px;
+}
+
+.ban-wrap .ban2-wrap a:first-child {
+    background: #f8f9fb url('/static/img/sj_logo.jpg') no-repeat;
+    background-size: 60px 62px;
+    background-position: right 12px bottom 16px;
+}
+
+.ban-wrap .ban2-wrap a:nth-child(2) {
+    background: #f8f9fb url('/static/img/gh_logo.jpg') no-repeat;
+    background-size: 60px 62px;
+    background-position: right 12px bottom 16px;
+}
+
+.ban-wrap div a{
+    width:45%;
+    border: 1px solid #e3e3e3;
+    border-radius:10px;
+    height:120px;
+    box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.75);
+}
+
+.ban-wrap a div {
+    margin-top:8px;
+    margin-left:5px;
+    position:relative;
+}
+
+.ban-wrap a div::after {
+    content: " ";
+    position: absolute;
+    bottom: -10px;
+    left: 5px;
+    width: 25px;
+    height: 2px;
+    background: linear-gradient(135deg, #a5a567, #905b11);
+}
+
+
+/* ----------  홈 신청하기 배너섹션 끝 ---------- */
+
+/* ----------  홈 중간 인트로섹션 시작 ---------- */
+
+.intro-section {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    padding: 30px;
+    box-sizing:border-box;
+    justify-content:center;
+    gap:20px;
+}
+
+.intro-section img {
+    width:200px;
+    height:auto;
+}
+
+.intro-section div {
+    align-self:center;
+}
+
+.intro-section .t1 {
+    font-family: 'NotoSansKR-medium';
+    font-size:1.5em;
+    line-height:115%;
+    letter-spacing: -1.5px;
+}
+
+.intro-section .t2 {
+    color:#7a7a7a;
+}
+
+/* ----------  홈 중간 인트로섹션 끝 ---------- */
+
+
+
+/* ----------  예약 및 길찾기 배너 시작 ---------- */
+
+.reserve {
+    width:100%;
+    display:flex;
+}
+
+.reserve img {
+    height:16px;
+    width:auto;
+    margin-left:5px;
+}
+
+.reserve .res-left, .reserve .res-right {
+    width:50%;
+    display:flex;
+    justify-content:center;
+}
+
+.reserve .res-left a, .reserve .res-right a {
+    display:flex;
+    align-items:center;
+    color:white;
+    margin: 8px 0 ;
+    font-family: 'NotoSansKR-regular';
+}
+
+.reserve .res-left {
+    background-color: #06be34;
+}
+
+.reserve .res-right {
+    background-color: #033153;
+}
+
+.reserve .res-left a:hover, .reserve .res-left a:active {
+    background-color: #06be34;
+}
+.reserve .res-right a:hover, .reserve .res-right a:active {
+    background-color: #033153;
+}
+
+/* ----------  예약 및 길찾기 배너 끝 ---------- */
+
+
 
 /* ----------  하단 계좌 및 전화 정보 시작 ---------- */
 
@@ -199,65 +466,7 @@ a:hover, a:active {text-decoration: none; color:rgb(0, 0, 0); background-color:#
 
 /* ----------  신청서 폼 스타일 조정 끝  ---------- */
 
-.hidden {display:none;}
 
-select {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #444;
-    background-color: #fff;
-    padding: 0.2em 2.5em 0.2em 0.5em;
-    margin: 0;
-    border: 1px solid #aaa;
-    border-radius: 0.2em;
-    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-    background-repeat: no-repeat;
-    background-position: right 0.7rem top 50%;
-    background-size: 0.65rem auto;
-}
-
-select:focus {
-    border-color: #aaa;
-    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
-    box-shadow: 0 0 0 3px;
-    color: rgb(83, 83, 83);
-    outline: none;
-}
-
-button {
-    border: 1px solid #acacac;
-    border-radius: 5px;
-    color:rgb(0, 0, 0);
-    background-color: #ececec;
-    font-weight: 400;
-}
-
-html {
-    font-family: 'NotoSansKR-regular';
-    font-size: 15px;
-}
-
-body {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    line-height: normal;
-    -webkit-text-size-adjust: none;
-    -moz-text-size-adjust: none;
-    -ms-text-size-adjust: none;
-}
-
-.wrap {
-    max-width: 960px;
-    min-width: 320px;
-    padding: 0;
-    margin: 0 auto;
-}
 
 /* ----------- main page start  ---------- */
 
@@ -516,6 +725,10 @@ input[name="tab_item"] {
     font-size:1.2rem;
 }
 
+.tabText p {
+    font-family:"NotoSansKR-light";
+}
+
 .tabImage {
     display: flex;
     justify-content: center;
@@ -710,7 +923,7 @@ input[name="tab_item"] {
 
 .submitForm-wrap .submit-button-wrap button {
     font-size: 1rem;
-    width: 85px;
+    width: 90px;
     height: 30px;
 }
 
@@ -991,11 +1204,12 @@ input[name="tab_item"] {
 .subcontext p{
     line-height: 180%;
     font-size: 1rem;
+    font-family: 'NotoSansKR-light';
 }
 
 .subcontext p span {
-    font-family: 'NotoSansKR-medium';
-    font-size: 1.1rem;
+    font-family: 'NotoSansKR-regular';
+    font-size: 1.07rem;
 }
 
 .subContent img {
@@ -1041,15 +1255,12 @@ input[name="tab_item"] {
     text-align: center;
     font-size: 1rem;
     border: 1px solid #dfdfdf;
-    
 }
 
-.sub-menus > ul > a > li:hover {
-    background-color: rgb(232, 219, 204);  
-    color: #4c2c2c;
-    cursor: pointer;
-    font-weight: bold;
+.sub-menus .active li {
+    border-bottom-color: rgb(157, 115, 115);
 }
+
 
 /* ----------- sub menus components end  ---------- */
 

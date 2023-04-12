@@ -1,57 +1,52 @@
 {% extends 'mobile/main.html' %}
 {% load static %}
 {% block content %}
-<div class="wrap">
-    {% include 'mobile/header.html' %}
-    <div class="container">
-        <div class="conimg">
-            <img aria-label="conimage" src="{% static "img/m-maintext.png" %}" >            
-        </div>
-        <div class="submitForm-wrap">
-            <form method="POST" autocomplete="off" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="form-box">
-                    <div class="requester-form-wrap">
-                        <div class="title">
-                            <h3>신청인 정보</h3>
-                            <span> 신청서 조회시 이름과 전화번호가 사용되므로 정확히 입력해주시기 바랍니다.</span>
-                        </div>
-                        <div class='form-content'>
-                            {{ form1.as_p }}
-                        </div>
-                    </div>
-                </div>
-                <div class="form-box">
-                    <div class="person-form-wrap">
-                        <div class="title">
-                            <h3>개명대상자 인적사항</h3>
-                        </div>
-                        <div class="person-form">
-                            {{ form2.as_p }}
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="personal-info">                            
-                    <div>
-                        개인정보제공에 동의합니다.
-                    </div>                  
-                    <input type="checkbox" name="agreechk" value="1" required>
-                </div>
-
-                <div class="submit-button-wrap">
-                    {% if person %}
-                    <button type="submit">수정완료</button>
-                    {% else %}
-                    <button type="submit">신청하기</button>
-                    {% endif %}
-                    
-                </div>
-            </form>
-        </div>
+<div class="container">
+    <div class="conimg">
+        <img aria-label="conimage" src="{% static "img/m-maintext.png" %}" >            
     </div>
-    {% include 'mobile/components/footer.html' %}
+    <div class="submitForm-wrap">
+        <form method="POST" autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-box">
+                <div class="requester-form-wrap">
+                    <div class="title">
+                        <h3>신청인 정보</h3>
+                        <span> 신청서 조회시 이름과 전화번호가 사용되므로 정확히 입력해주시기 바랍니다.</span>
+                    </div>
+                    <div class='form-content'>
+                        {{ form1.as_p }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-box">
+                <div class="person-form-wrap">
+                    <div class="title">
+                        <h3>개명대상자 인적사항</h3>
+                    </div>
+                    <div class="person-form">
+                        {{ form2.as_p }}
+                    </div>
+                </div>
+            </div>
 
+            <div class="personal-info">                            
+                <div>
+                    개인정보제공에 동의합니다.
+                </div>                  
+                <input type="checkbox" name="agreechk" value="1" required>
+            </div>
+
+            <div class="submit-button-wrap">
+                {% if person %}
+                <button type="submit">수정완료</button>
+                {% else %}
+                <button type="submit">신청하기</button>
+                {% endif %}
+
+            </div>
+        </form>
+    </div>
 </div>
 
 {% endblock content %}

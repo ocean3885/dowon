@@ -7,8 +7,14 @@ from base.models import Submit, Person
 def m_home(request):
     return render(request, 'mobile/m_home.html')
 
+def m_board(request):
+    return render(request, 'mobile/m_board.html')
+
 def m_sub_intro(request):
     return render(request, 'mobile/m_sub_intro.html')
+
+def m_about_way(request):
+    return render(request, 'mobile/m_about_way.html')
 
 def m_about_jm(request):
     return render(request, 'mobile/m_about_jm.html')

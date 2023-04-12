@@ -1,63 +1,58 @@
 {% extends 'mobile/main.html' %}
 {% load static %}
 {% block content %}
-<div class="wrap">
-    {% include 'mobile/header.html' %}
-    <div class="container">
-        <div class="conimg">
-            <img aria-label="conimage" src="{% static "img/m-maintext.png" %}" >            
-        </div>
-        {% if persons %}
-            {% include 'mobile/components/formset_complete.html' %}
-        {% else %}
-        <div class="submit-check-wrap">
-            {% if form1 %}
-                <h2>"수정이 완료되었습니다."</h2>
-            {% else %}
-                <h2>"신청이 완료되었습니다."</h2>
-            {% endif %}
-            <h3> 신청내용확인 </h3>
-            <table>
-                <tr><th colspan="2">신청인 정보</th></tr>
-                <tr><td>신청내용</td><td>{{submit.category}}</td></tr>
-                <tr><td>신청인 이름</td><td>{{submit.name}}</td></tr>
-                <tr><td>전화번호</td><td>{{submit.phonnumber}}</td></tr>
-                <tr><td>이메일</td><td>{{submit.email}}</td></tr>
-                <tr><td>부모님성함</td><td>{{submit.parents_name}}</td></tr>
-                <tr><td>성씨(한자)</td><td>{{submit.first_name_ch}}</td></tr>
-                <tr><td>희망하는 이름</td><td>{{submit.fav_name}}</td></tr>
-                <tr><td>피하고싶은 이름</td><td>{{submit.avoid_name}}</td></tr>
-                <tr><td>주 소</td><td>{{submit.adress}}</td></tr>
-                <tr><td>추가요청사항</td><td>{{submit.description|linebreaksbr}}</td></tr>
-            </table>
-            <table>
-                <tr><th colspan="2">대상자 인적사항</th></tr>
-                <tr><td>성 별</td><td>{{person.gen}}</td></tr>
-                <tr><td>양력/음력</td><td>{{person.sl}}</td></tr>
-                <tr><td>태어난 년(年)</td><td>{{person.year}}년</td></tr>
-                <tr><td>태어난 월(月)</td><td>{{person.month}}월</td></tr>
-                <tr><td>태어난 일(日)</td><td>{{person.day}}일</td></tr>
-                <tr><td>태어난 시간</td><td>{{person.time}}</td></tr>
-            </table>
-            <div>
-                <a href="{% url 'm-home' %}"><button type="button">홈으로</button></a>
-                <form action='{% url 'm-edit-submit' %}' method="GET" autocomplete="off" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <input type="hidden" name="pk" value="{{ submit.id }}">
-                    <button type="submit">수정하기</button>
-                </form>
-                <form action='{% url 'm-delete-submit' %}' method="GET" autocomplete="off" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <input type="hidden" name="pk" value="{{ submit.id }}">
-                    <button type="submit">신청취소</button>
-                </form>
-            </div>
-        </div>
-        {% endif %}
-        
-    </div>
-    {% include 'mobile/components/footer.html' %}
 
+<div class="container">
+    <div class="conimg">
+        <img aria-label="conimage" src="{% static "img/m-maintext.png" %}" >            
+    </div>
+    {% if persons %}
+        {% include 'mobile/components/formset_complete.html' %}
+    {% else %}
+    <div class="submit-check-wrap">
+        {% if form1 %}
+            <h2>"수정이 완료되었습니다."</h2>
+        {% else %}
+            <h2>"신청이 완료되었습니다."</h2>
+        {% endif %}
+        <h3> 신청내용확인 </h3>
+        <table>
+            <tr><th colspan="2">신청인 정보</th></tr>
+            <tr><td>신청내용</td><td>{{submit.category}}</td></tr>
+            <tr><td>신청인 이름</td><td>{{submit.name}}</td></tr>
+            <tr><td>전화번호</td><td>{{submit.phonnumber}}</td></tr>
+            <tr><td>이메일</td><td>{{submit.email}}</td></tr>
+            <tr><td>부모님성함</td><td>{{submit.parents_name}}</td></tr>
+            <tr><td>성씨(한자)</td><td>{{submit.first_name_ch}}</td></tr>
+            <tr><td>희망하는 이름</td><td>{{submit.fav_name}}</td></tr>
+            <tr><td>피하고싶은 이름</td><td>{{submit.avoid_name}}</td></tr>
+            <tr><td>주 소</td><td>{{submit.adress}}</td></tr>
+            <tr><td>추가요청사항</td><td>{{submit.description|linebreaksbr}}</td></tr>
+        </table>
+        <table>
+            <tr><th colspan="2">대상자 인적사항</th></tr>
+            <tr><td>성 별</td><td>{{person.gen}}</td></tr>
+            <tr><td>양력/음력</td><td>{{person.sl}}</td></tr>
+            <tr><td>태어난 년(年)</td><td>{{person.year}}년</td></tr>
+            <tr><td>태어난 월(月)</td><td>{{person.month}}월</td></tr>
+            <tr><td>태어난 일(日)</td><td>{{person.day}}일</td></tr>
+            <tr><td>태어난 시간</td><td>{{person.time}}</td></tr>
+        </table>
+        <div>
+            <a href="{% url 'm-home' %}"><button type="button">홈으로</button></a>
+            <form action='{% url 'm-edit-submit' %}' method="GET" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="pk" value="{{ submit.id }}">
+                <button type="submit">수정하기</button>
+            </form>
+            <form action='{% url 'm-delete-submit' %}' method="GET" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="pk" value="{{ submit.id }}">
+                <button type="submit">신청취소</button>
+            </form>
+        </div>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock content %}
