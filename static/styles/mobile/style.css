@@ -70,6 +70,22 @@ body {
     margin: 0 auto;
 }
 
+/* ----------  찾아오는길 컴포넌트 시작 ---------- */
+
+.map-wrap {
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.map-wrap .map {
+    width:90%;
+}
+
+
+/* ----------  찾아오는길 컴포넌트 끝 ---------- */
+
+
 /* ----------  서브타이틀 컴포넌트 시작 ---------- */
 
 .sub-title {
@@ -85,8 +101,8 @@ body {
 
 .sub-title .t1 {
     font-size:1.2rem;
-    margin: 10px 0 5px 0 ;
-    letter-spacing: 3px;
+    margin: 13px 0 5px 0 ;
+    letter-spacing: 2px;
     position:relative;
     font-family: 'Noto Serif KR', serif;
     font-weight:500;

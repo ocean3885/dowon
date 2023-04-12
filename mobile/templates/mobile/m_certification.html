@@ -1,0 +1,52 @@
+{% extends 'mobile/main.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600&display=swap');
+</style>
+
+<div class="container">
+    <div class="conimg">
+        <img aria-label="conimage" src="{% static "img/m-maintext.png" %}" >            
+    </div>
+
+    <div class="sub-menus">
+        <ul>
+            <a href="{% url 'm-sub-intro' %}"><li>작명원소개</li></a>
+            <a href="{% url 'm-about-jm' %}"><li>작명절차안내</li></a>
+            <a class="active" href="{% url 'm-certification' %}"><li>작명추천서</li></a>
+        </ul>
+        <ul>
+            <a href="{% url 'm-submit-info' %}"><li>상담신청안내</li></a>
+            <a href="{% url 'm-about-way' %}"><li>찾아오시는길</li></a>
+        </ul>
+    </div>
+    
+    <div class="sub-title">
+        <div class="t1-wrap">
+            <div class="t1">
+                작명추천서
+            </div>
+        </div>
+    </div>
+    
+    <div class="blank-space"></div>    
+
+    <div class="ban-section">
+        {% include 'mobile/components/ban_section.html' %}            
+    </div>
+
+    <div class="blank-space"></div>
+    
+    <div class="reserve">
+        {% include 'mobile/components/reserve.html' %}            
+    </div>
+
+    <div class="account-info">
+        {% include 'mobile/components/account_info.html' %}            
+    </div>
+    
+</div>
+
+{% endblock content %}

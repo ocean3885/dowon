@@ -1,6 +1,11 @@
 {% extends 'mobile/main.html' %}
 {% load static %}
 {% block content %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600&display=swap');
+</style>
+
 <div class="container">
     <div class="conimg">
         <img aria-label="conimage" src="{% static "img/m-maintext.png" %}" >            
@@ -16,6 +21,14 @@
             <a href="{% url 'm-submit-info' %}"><li>상담신청안내</li></a>
             <a href="{% url 'm-about-way' %}"><li>찾아오시는길</li></a>
         </ul>
+    </div>
+    
+    <div class="sub-title">
+        <div class="t1-wrap">
+            <div class="t1">
+                작명원소개
+            </div>
+        </div>
     </div>
 
     <div class="sub-content-wrap">
