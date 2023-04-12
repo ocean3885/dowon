@@ -261,6 +261,11 @@ body {
     font-family: 'NotoSansKR-regular';
 }
 
+.reserve .res-right a {
+    width:85px;
+    justify-content:center;
+}
+
 .reserve .res-left {
     background-color: #06be34;
 }
