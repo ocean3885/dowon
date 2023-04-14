@@ -70,7 +70,7 @@ body {
     margin: 0 auto;
 }
 
-/* ----------  신청안내 컴포넌트 시작 ---------- */
+/* ----------  신청안내 및 작명절차 컴포넌트 시작 ---------- */
 
 .submit-info {
     width:100%;
@@ -94,14 +94,14 @@ body {
 .submit-info .t1::before {
     content: "";
     position: absolute;
-    top: 7px;
+    top: 6px;
     left: 0px;
     width: 5px;
     height: 15px;
     background: #8b4513;
 }
 
-.submit-info span {
+.submit-info .t1 span {
     color:gray;
     font-size:0.9rem;
 }
@@ -148,6 +148,10 @@ body {
     background-size: 5px 5px;
 }
 
+.submit-info .payment .right .title1{
+    margin-bottom: 6px;
+}
+
 .submit-info .payment .right .explain{
     font-size:0.9rem;
 }
@@ -159,7 +163,6 @@ body {
 .info-content-wrap .explain {
     display:flex;
     flex-direction:column;
-    /* align-items:center; */
     gap:10px;
     margin-top:15px;
 }
@@ -176,16 +179,19 @@ body {
     font-size: 1rem;
 }
 
+.payment .right .explain span {
+    color:#B45F04;
+}
+
 @media (min-width:500px){
     .submit-info .payment {flex-direction:row;}
     .submit-info .payment .t2 {flex-direction:column;width:40%;justify-content:start;gap:0;}
     .payment .t2 .left {height:100px;}
     .payment .t2 .right {width:100%;padding-left:20px;}
     .payment {justify-content:space-around;}
-    .submit-info .payment .right .button {}    
 }
 
-/* ----------  신청안내 컴포넌트 끝 ---------- */
+/* ----------  신청안내 및 작명절차 컴포넌트 끝 ---------- */
 
 
 /* ----------  찾아오는길 컴포넌트 시작 ---------- */

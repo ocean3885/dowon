@@ -49,12 +49,12 @@ def submit_jm(request):
             person.submit = obj
             person.save()
             context = {'submit':obj,'person':person}
-            # message = client.messages.create(
-            #   body="작명신청이 접수되었습니다.",
-            #   from_="+15673811669",
-            #   to="+821022324548"
-            # )
-            # print(message.sid)
+            message = client.messages.create(
+              body="작명신청이 접수되었습니다.",
+              from_="+15673811669",
+              to="+821022324548"
+            )
+            print(message.sid)
             return render(request,'base/submit_complete.html',context)
         else:
             context = {'form1': form1, 'form2':form2}
@@ -78,6 +78,12 @@ def submit_gm(request):
             person.submit = obj
             person.save()
             context = {'submit':obj,'person':person}
+            message = client.messages.create(
+              body="개명신청이 접수되었습니다.",
+              from_="+15673811669",
+              to="+821022324548"
+            )
+            print(message.sid)
             return render(request,'base/submit_complete.html',context)
     form1 = GmSubmitForm()
     form2 = PersonForm()
@@ -101,6 +107,12 @@ def submit_sj(request):
             'submit': parent,
             'persons': persons,
             }
+            message = client.messages.create(
+              body="사주상담신청이 접수되었습니다.",
+              from_="+15673811669",
+              to="+821022324548"
+            )
+            print(message.sid)
             return render(request,'base/submit_complete.html',context)
         
     form = SjSubmitForm()
