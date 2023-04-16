@@ -132,7 +132,7 @@ class PersonForm(ModelForm):
     class Meta:
 
         model = Person
-        exclude = ['submit']
+        exclude = ['submit','name']
         labels = {
             "time": "태어난 시간 ",
         }
