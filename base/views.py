@@ -22,6 +22,9 @@ def pc_home(request):
 def sub_intro(request):
     return render(request, 'base/sub_intro.html')
 
+def about_way(request):
+    return render(request, 'base/about_way.html')
+
 def certification(request):
     return render(request, 'base/certification.html')
 
@@ -44,6 +47,8 @@ def submit_jm(request):
         if all([form1.is_valid(),form2.is_valid()]):
             obj = form1.save(commit=False)
             obj.category = "신생아작명"
+            if request.user.is_authenticated:
+                obj.user = request.user
             obj.save()
             person = form2.save(commit=False)
             person.submit = obj

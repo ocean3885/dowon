@@ -1,6 +1,11 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block content %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600&display=swap');
+</style>
+
 <div class="wrap">
     {% include 'header.html' %}
 
@@ -13,6 +18,17 @@
             {% include 'base/components/sub_sidemenu2.html' %}
             <div class="subContent">
                 
+                <div class="sub-title">
+                    <div class="t1-wrap">
+                        <div class="t1">
+                            신청방법안내
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="submit-info">
+                    {% include 'base/components/submit_info_content.html' %}            
+                </div>
             </div>
         </div>
         

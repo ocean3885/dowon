@@ -12,55 +12,6 @@ a:visited { color: black; text-decoration: none;}
     color : red;
 }
 
-/* ----------  작명절차안내 페이지 시작  ---------- */
-
-.sub-page1 div {
-    display:flex;
-    justify-content:center;
-}
-
-#procedure {
-    margin-top:10px;
-    width:95%;
-    height:auto;
-}
-
-.procedure_down {
-    display:flex;
-    justify-content:center;
-}
-
-.procedure_down img {
-    width:300px;
-    height:auto;
-    border-radius:10px;
-    margin: 50px 30px;
-    box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
-}
-
-/* ----------  작명절차안내 페이지 끝  ---------- */
-
-
-
-
-/* ----------  신청서 폼 스타일 조정 시작  ---------- */
-
-#id_gen {list-style : none;margin:0;padding:0;display:flex;}
-#id_sl {list-style : none;margin:0;padding:0;display:flex;}
-#id_category {list-style : none;margin:0;padding:0;display:flex;gap:10px;}
-.person-form-sj ul {list-style : none;margin:0;padding:0;display:flex;}
-.person-form-sj ul li {align-self:center;}
-.personal-info {
-    display : flex;
-    justify-content : center;
-    gap : 10px;    
-}
-.personal-info input {width:18px;height:18px;}
-
-/* ----------  신청서 폼 스타일 조정 끝  ---------- */
-
 .font-default{
     font-size: 1.3rem;
 }
@@ -149,6 +100,235 @@ body {
 }
 
 /* ---------  header end --------- */
+
+/* ----------  서브타이틀 컴포넌트 시작 ---------- */
+
+.sub-title {
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.sub-title .t1-wrap {
+    width:90%;
+    border-bottom: 2px solid #e3e3e3;
+}
+
+.sub-title .t1 {
+    font-size:1.4rem;
+    margin: 13px 0 5px 0 ;
+    letter-spacing: 2px;
+    position:relative;
+    font-family: 'Noto Serif KR', serif;
+    font-weight:600;
+}
+
+.sub-title .t1::before {
+    position: absolute;
+    top: 0;
+    left: -5px;
+    content: "";
+    font-size: 0.75em;
+    opacity:40%;
+    width:13px;
+    height:13px;
+    background: rgb(216, 108, 103);
+}
+
+/* ----------  서브타이틀 컴포넌트 끝 ---------- */
+
+
+/* ----------  신청안내 및 작명절차 컴포넌트 시작 ---------- */
+
+.submit-info {
+    width:100%;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+}
+
+.submit-info-wrap {
+    display:flex;
+    width:90%;
+    flex-direction:column;
+}
+
+.submit-info .t1 {
+    position:relative;
+    padding-left:10px;
+    font-size:1.1rem;
+    margin-top:20px;
+}
+
+.submit-info .t1::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    width: 5px;
+    height: 15px;
+    background: #8b4513;
+}
+
+.submit-info .t1 span {
+    color:gray;
+    font-size:0.9rem;
+}
+
+.submit-info .payment {
+    display:flex;
+    margin-top:25px;
+    gap:20px;
+    justify-content:space-around;
+}
+
+.submit-info .payment .t2 {
+    width:40%;
+    display:flex;
+    gap:10%;
+    justify-content:center;
+}
+
+.submit-info .payment .t2 .left img{
+    border-radius:30px;
+    width:70px;
+    height:auto;
+    border: 1px solid #A4A4A4;
+    padding: 10px;
+    background-color: #f8f9fb;
+}
+
+.submit-info .payment .left {
+    align-self:center;
+    height:100px;
+}
+
+
+.submit-info .payment .right {
+    width:100%;
+    padding-left:20px;
+}
+
+
+.submit-info .payment .right button {
+    margin: 8px 0 10px 10px;
+    padding:3px 5px 5px 5px;
+}
+
+.submit-info .payment .right .title{
+    margin-bottom: 6px;
+    padding-left: 12px;
+    background: url('/static/img/titleBulletM2.png') no-repeat left 9px;
+    background-size: 5px 5px;
+}
+
+.submit-info .payment .right .title1{
+    margin-bottom: 6px;
+}
+
+.submit-info .payment .right .explain{
+    font-size:0.9rem;
+}
+
+.info-content-wrap {
+    width:90%;
+}
+
+.info-content-wrap .explain {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:15px;
+    margin-bottom:20px;
+}
+
+.info-content-wrap .explain div {
+    background: url('/static/img/titleBulletM2.png') no-repeat;
+    background-size: 5px 5px;
+    background-position: 0 9px;
+    padding-left:10px;
+}
+
+.info-content-wrap .explain span{
+    color:#B45F04;
+    font-size: 1rem;
+}
+
+.payment .right .explain span {
+    color:#B45F04;
+}
+
+.submit-info .payment .img1 {background: url('/static/img/jminfo1.jpg') no-repeat;}
+.submit-info .payment .img2 {background: url('/static/img/jminfo2.jpg') no-repeat;}
+.submit-info .payment .img3 {background: url('/static/img/jminfo3.jpg') no-repeat;}
+.submit-info .payment .img4 {background: url('/static/img/jminfo4.jpg') no-repeat;}
+
+.submit-info .payment .left1 {
+    align-self:center;
+    width:130px;
+    height:100px;
+    border-radius:10px;
+    background-size:130px 120px;
+    background-position:bottom;
+    box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.75);
+    margin-bottom:15px;
+}
+
+/* ----------  신청안내 및 작명절차 컴포넌트 끝 ---------- */
+
+
+/* ----------  작명절차안내 페이지 시작  ---------- */
+
+.sub-page1 div {
+    display:flex;
+    justify-content:center;
+}
+
+#procedure {
+    margin-top:10px;
+    width:95%;
+    height:auto;
+}
+
+.procedure_down {
+    display:flex;
+    justify-content:center;
+}
+
+.procedure_down img {
+    width:300px;
+    height:auto;
+    border-radius:10px;
+    margin: 50px 30px;
+    box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.75);
+}
+
+/* ----------  작명절차안내 페이지 끝  ---------- */
+
+
+
+
+/* ----------  신청서 폼 스타일 조정 시작  ---------- */
+
+#id_gen {list-style : none;margin:0;padding:0;display:flex;}
+#id_sl {list-style : none;margin:0;padding:0;display:flex;}
+#id_category {list-style : none;margin:0;padding:0;display:flex;gap:10px;}
+.person-form-sj ul {list-style : none;margin:0;padding:0;display:flex;}
+.person-form-sj ul li {align-self:center;}
+.personal-info {
+    display : flex;
+    justify-content : center;
+    gap : 10px;    
+}
+.personal-info input {width:18px;height:18px;}
+
+/* ----------  신청서 폼 스타일 조정 끝  ---------- */
+
+
 
 /* ---------  center start --------- */
 

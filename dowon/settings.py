@@ -39,6 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    
+    'django.contrib.sites',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django_user_agents',
@@ -49,6 +56,8 @@ INSTALLED_APPS = [
     'msr_database',
     'manseryuk',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -81,6 +90,13 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+AUTH_USER_MODEL = 'base.User'
 
 WSGI_APPLICATION = 'dowon.wsgi.application'
 
@@ -151,3 +167,11 @@ try:
     from .settings_local import *
 except ImportError:
     pass
+
+
+# allauth 관련설정
+
+LOGIN_REDIRECT_URL = '/home/'
+LOGOUT_REDIRECT_URL = "/"
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_SIGNUP_FORM_CLASS = 'base.forms.SignupForm'

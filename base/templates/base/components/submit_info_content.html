@@ -1,0 +1,116 @@
+{% load static %}
+
+<div class="submit-info-wrap">
+    <div class="t1">
+        신청비용안내 <span>COSTINFO</span>        
+    </div>
+    <div class="payment">
+        <div class="t2">
+            <div class="left">
+                <img aria-label="jakmyung info" src="{% static 'img/jm_logo.jpg' %}" >            
+            </div>
+            <div class="right">
+                <div class="title">
+                    신생아 작명 
+                </div>
+                <div class="explain">
+                    작명비용 : 15만원<br>
+                    재작명 1회 무료(이름5개)<br>
+                    작명인증서는 별도(3만원)
+                </div>
+                <div class="button">
+                    <a href={% url 'submit-jm' %}>
+                    <button>작명신청하기</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="t2">
+            <div class="left">
+                <img aria-label="jakmyung info" src="{% static 'img/gm_logo.jpg' %}" >            
+            </div>
+            <div class="right">
+                <div class="title">
+                    개명 신청 
+                </div>
+                <div class="explain">
+                    개명비용 : 15만원<br>
+                    재작명 1회 무료(이름5개)<br>
+                    작명인증서는 별도(3만원)
+                </div>
+                <div class="button">
+                    <a href={% url 'submit-gm' %}>
+                    <button>개명신청하기</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="payment">
+        <div class="t2">
+            <div class="left">
+                <img aria-label="jakmyung info" src="{% static 'img/sj_logo.jpg' %}" >            
+            </div>
+            <div class="right">
+                <div class="title">
+                    사주 상담 
+                </div>
+                <div class="explain">
+                    전화상담 : 3만원<br>
+                    직접방문 : 5만원<br>
+                    가족상담(4인) : 10만원
+                </div>
+                <div class="button">
+                    <a href={% url 'submit-sj' %}>
+                    <button>사주상담하기</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="t2">
+            <div class="left">
+                <img aria-label="jakmyung info" src="{% static 'img/gh_logo.jpg' %}" >            
+            </div>
+            <div class="right">
+                <div class="title">
+                    결혼궁합상담
+                </div>
+                <div class="explain">
+                    전화상담 : 5만원<br>
+                    직접방문 : 10만원<br>
+                </div>
+                <div class="button">
+                    <a href={% url 'submit-sj' %}>
+                    <button>상담신청하기</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="blank-space"></div>
+<div class="info-content-wrap">
+    <div class="t1">
+        신청세부안내 <span>DETAILINFO</span>        
+    </div>
+    
+    <div class="explain">
+        <div>
+            해당되는<span> [신청하기] </span>버튼을 누르신 후 신청하시면 내용 확인을 위해 전화를 드립니다.
+        </div>
+        <div>
+            상담비용 결제후 1~2일 이내에 가장 합당한 <span>이름 5개를 추천</span>하여 드리며 작명 추천서는 신청서에 
+            기재하여주신 이메일로 보내드립니다.
+        </div>
+        <div>
+            인터넷 작명 및 전화상담 신청 또한 원장님께서 <span>직접 정성을 다해</span> 작명 및 상담해 드리므로 방문상담과
+            같은 내용을 제공받으실 수 있습니다.
+        </div>
+        <div>
+            기타 문의사항은 <span>063)285-7255</span> 로 문의주시면 친절하게 상담해 드리겠습니다.
+        </div>
+        
+    </div>
+</div>

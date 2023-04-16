@@ -17,5 +17,6 @@ urlpatterns = [
     path('about-naming/', views.about_naming, name="about-naming"),
     path('certification/', views.certification, name="certification"),
     path('about-jm/', views.about_jm, name="about-jm"),
+    path('about-way/', views.about_way, name="about-way"),
 
 ]

@@ -1,5 +1,10 @@
 from django.db import models
 import datetime
+from django.contrib.auth.models import AbstractUser
+from dowon import settings
+
+class User(AbstractUser):
+    phonnumber = models.CharField(max_length=20)
 
 class Submit(models.Model):
 
@@ -13,7 +18,8 @@ class Submit(models.Model):
         ("궁합","궁합"),
         ("택일","택일"),
     ]
-
+    
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,blank=True, null=True,on_delete=models.SET_NULL)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     name = models.CharField(max_length=50)
     created = models.DateTimeField(auto_now_add=True)
@@ -30,7 +36,8 @@ class Submit(models.Model):
 
     def __str__(self):
         return self.name
-
+    
+    
 
 class Person(models.Model):
     name = models.CharField(max_length=50,blank=True)

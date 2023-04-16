@@ -1,15 +1,37 @@
 from django.forms import ModelForm
 from django import forms
 import datetime
-from .models import Submit, Person
+from .models import Submit, Person, User
 
+
+class SignupForm(forms.ModelForm):
+
+    class Meta:
+
+        model = User
+        fields = ['phonnumber']
+
+    def signup(self, request, user):
+        user.phonnumber = self.cleaned_data['phonnumber']
+        user.save()
+        
+    def clean_phonnumber(self,*args,**kwargs):
+        phonnumber = self.cleaned_data.get("phonnumber")
+        if len(phonnumber) < 10:
+            raise forms.ValidationError("'010'을 포함하여 10자리 이상의 숫자로 입력해주시기 바랍니다.")
+        if phonnumber.isdigit():
+            return phonnumber
+        else:
+            raise forms.ValidationError("'-'하이픈을 제외하고 숫자로만 입력해주시기 바랍니다.")
+
+        
 class JmSubmitForm(ModelForm):
     
     field_order = ['name', 'phonnumber', 'email', 'adress', 'first_name_ch', 'fav_name', 'avoid_name', 'parents_name', 'description']
 
     class Meta:
         model = Submit
-        exclude = ['category','complete']
+        exclude = ['category','complete','user']
         labels = {
             "phonnumber": "전화번호 ",
             "name": "이 름 ",
@@ -110,7 +132,7 @@ class PersonForm(ModelForm):
     class Meta:
 
         model = Person
-        exclude = ['submit','name']
+        exclude = ['submit']
         labels = {
             "time": "태어난 시간 ",
         }
@@ -121,7 +143,7 @@ class GmSubmitForm(ModelForm):
 
     class Meta:
         model = Submit
-        exclude = ['category','complete']
+        exclude = ['category','complete','user']
         labels = {
             "phonnumber": "전화번호 ",
             "name": "이 름 ",
@@ -181,6 +203,15 @@ class GmSubmitForm(ModelForm):
                 }
             ),
         }
+        
+        def clean_phonnumber(self,*args,**kwargs):
+            phonnumber = self.cleaned_data.get("phonnumber")
+            if len(phonnumber) < 10:
+                raise forms.ValidationError("'010'을 포함하여 10자리 이상의 숫자로 입력해주시기 바랍니다.")
+            if phonnumber.isdigit():
+                return phonnumber
+            else:
+                raise forms.ValidationError("'-'하이픈을 제외하고 숫자로만 입력해주시기 바랍니다.")
 
 class SjSubmitForm(ModelForm):
     CAT_CHOICES = [("사주상담","사주상담"),("궁합","궁합")]
@@ -218,6 +249,15 @@ class SjSubmitForm(ModelForm):
                 }
             ),
         }
+        
+        def clean_phonnumber(self,*args,**kwargs):
+            phonnumber = self.cleaned_data.get("phonnumber")
+            if len(phonnumber) < 10:
+                raise forms.ValidationError("'010'을 포함하여 10자리 이상의 숫자로 입력해주시기 바랍니다.")
+            if phonnumber.isdigit():
+                return phonnumber
+            else:
+                raise forms.ValidationError("'-'하이픈을 제외하고 숫자로만 입력해주시기 바랍니다.")
 
 
 class SjPersonForm(PersonForm):

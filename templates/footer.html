@@ -4,7 +4,12 @@
         <div><img aria-label="footer logo" src="{% static 'img/flogo.jpg' %}"></div>
         <div class="ftext">
             <ul>
-                <li>이용약관</li>
+                {% if user.is_authenticated %}
+                <a href="/accounts/logout"><li>로그아웃</li></a>
+                {% else %}
+                <a href="/accounts/login"><li>로그인</li></a>
+                {% endif %}
+                
                 <li>개인정보처리방침</li>
                 <a href="/admin"><li>관리자</li></a>
                 <a href="{% url 'm-home'%}"><li>모바일</li></a>
