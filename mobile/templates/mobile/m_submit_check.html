@@ -15,6 +15,7 @@
             <tr><th colspan="2">신청인 정보</th></tr>
             <tr><td>신청내용</td><td>{{submit.category}}</td></tr>
             <tr><td>신청인 이름</td><td>{{submit.name}}</td></tr>
+            <tr><td>진행상황</td><td>{{submit.process}}</td></tr>
             <tr><td>전화번호</td><td>{{submit.phonnumber}}</td></tr>
             <tr><td>이메일</td><td>{{submit.email}}</td></tr>
             <tr><td>부모님성함</td><td>{{submit.parents_name}}</td></tr>
@@ -35,6 +36,7 @@
         </table>
         <div>
             <a href="{% url 'm-home' %}"><button type="button">홈으로</button></a>
+            {% if not submit.complete %}
             <form action='{% url 'm-edit-submit' %}' method="GET" autocomplete="off" enctype="multipart/form-data">
                 {% csrf_token %}
                 <input type="hidden" name="pk" value="{{ submit.id }}">
@@ -45,9 +47,18 @@
                 <input type="hidden" name="pk" value="{{ submit.id }}">
                 <button type="submit">신청취소</button>
             </form>
+            {% endif %}
         </div>
     </div>
     {% endif %}
+    
+    <div class="reserve">
+        {% include 'mobile/components/reserve.html' %}            
+    </div>
+
+    <div class="account-info">
+        {% include 'mobile/components/account_info.html' %}            
+    </div>
 </div>
 
 {% endblock content %}

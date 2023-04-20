@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 from dowon import settings
 
 class User(AbstractUser):
-    phonnumber = models.CharField(max_length=20)
+    phonnumber = models.CharField("전화번호", max_length=20, unique=True)
 
 class Submit(models.Model):
 
@@ -17,6 +17,12 @@ class Submit(models.Model):
         ("사주상담","사주상담"),
         ("궁합","궁합"),
         ("택일","택일"),
+    ]
+    
+    PROCESS_CHOICES = [
+        ("입금대기","입금대기"),
+        ("진행중","진행중"),
+        ("완료","완료"),
     ]
     
     user = models.ForeignKey(settings.AUTH_USER_MODEL,blank=True, null=True,on_delete=models.SET_NULL)
@@ -32,6 +38,7 @@ class Submit(models.Model):
     phonnumber = models.CharField(max_length=20)
     email = models.EmailField(blank=True,max_length=254)
     description = models.TextField(blank=True)
+    process = models.CharField(max_length=20, choices=PROCESS_CHOICES, null=True,default="입금대기")
     complete = models.BooleanField(default=False)
 
     def __str__(self):

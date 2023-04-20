@@ -14,6 +14,12 @@ class SignupForm(forms.ModelForm):
     def signup(self, request, user):
         user.phonnumber = self.cleaned_data['phonnumber']
         user.save()
+        #이미생성된 신청서 중 가입유저 전화번호와 같은 신청서의 빈 유저필드를 가입유저로 변경
+        obj = Submit.objects.filter(phonnumber=user.phonnumber)
+        if obj:
+            for i in obj:
+                i.user = user            
+                i.save()                
         
     def clean_phonnumber(self,*args,**kwargs):
         phonnumber = self.cleaned_data.get("phonnumber")
@@ -31,7 +37,7 @@ class JmSubmitForm(ModelForm):
 
     class Meta:
         model = Submit
-        exclude = ['category','complete','user']
+        exclude = ['category','complete','user','process']
         labels = {
             "phonnumber": "전화번호 ",
             "name": "이 름 ",
@@ -143,7 +149,7 @@ class GmSubmitForm(ModelForm):
 
     class Meta:
         model = Submit
-        exclude = ['category','complete','user']
+        exclude = ['category','complete','user','process']
         labels = {
             "phonnumber": "전화번호 ",
             "name": "이 름 ",

@@ -1,0 +1,11 @@
+{% load user_agents %}
+
+{% if request|is_pc %}
+
+    {% include 'account/pc/login.html' %}
+
+{% else %}
+
+    {% include 'account/mobile/login.html' %}
+
+{% endif %}

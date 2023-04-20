@@ -12,6 +12,7 @@ urlpatterns = [
     path('m-edit-submit-sj/', views.m_edit_submit_sj, name="m-edit-submit-sj"),
     path('m-delete-submit/', views.m_delete_submit, name="m-delete-submit"),
     path('m-find-submit/', views.m_find_submit, name="m-find-submit"),
+    path('m-submit-detail/<int:pk>', views.m_submit_detail, name="m-submit-detail"),
     path('m-sub-intro/', views.m_sub_intro, name="m-sub-intro"),
     path('m-about-jm/', views.m_about_jm, name="m-about-jm"),
     path('m-about-naming/', views.m_about_naming, name="m-about-naming"),

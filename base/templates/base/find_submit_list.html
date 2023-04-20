@@ -11,7 +11,35 @@
         <div class="subCent">
              {% include 'base/components/sub_sidemenu2.html' %}
             <div class="subContent">
-                신청서리스트페이지
+                <div class="sub-title">
+                    <div class="t1-wrap">
+                        <div class="t1">
+                            신청내역목록
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="submit-list-wrap">
+                    <div class="submit-list">
+                        <div class="table">
+                            <div class="table-row title">
+                                <div class="table-cell">순번</div>
+                                <div class="table-cell">신청내용</div>
+                                <div class="table-cell">신청일</div>
+                                <div class="table-cell">진행상황</div>
+                            </div>
+                            {% for submit in submits %}
+                            <a class="table-row" href="{% url 'submit-detail' submit.pk %}">
+                                <div class="table-cell">{{ forloop.counter }}</div>
+                                <div class="table-cell">{{submit.category}}</div>
+                                <div class="table-cell">{{submit.created|date:"Y-m-d"}}</div>
+                                <div class="table-cell">{{submit.process}}</div>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
         

@@ -7,6 +7,7 @@
 
 a:link { color: black; text-decoration: none;}
 a:visited { color: black; text-decoration: none;}
+p {margin-block-start: 0; margin-block-end: 0;}
 
 .errorlist {
     color : red;
@@ -100,6 +101,25 @@ body {
 }
 
 /* ---------  header end --------- */
+
+/* ----------- 신청서 리스트 페이지 시작  ---------- */
+
+.submit-list-wrap {width:100%;margin:30px 0;}
+.submit-list { width:90%;margin:0 auto;}
+.submit-list .table {display:table;border-collapse: collapse;width:95%;margin:0 auto;}
+.submit-list .table .title{height:40px;font-size:1.1rem;border-bottom: 2px solid rgb(157, 115, 115);}
+.submit-list .table-row {display:table-row;border-bottom: 1px solid gray;height:40px;}
+.submit-list .table-row div:nth-of-type(1) {width:10%;}
+.submit-list .table-row div:nth-of-type(2) {width:20%;}
+.submit-list .table-row div:nth-of-type(3) {width:20%;}
+.submit-list .table-row div:nth-of-type(4) {width:20%;}
+.submit-list .table-cell {display:table-cell;text-align:center;vertical-align:middle;}
+
+
+
+/* ----------- 신청서 리스트 페이지 끝  ---------- */
+
+
 
 /* ----------  서브타이틀 컴포넌트 시작 ---------- */
 
@@ -733,7 +753,7 @@ body {
 /* ----------- sub introduce end ---------- */
 
 
-/* ----------- jakmyung form page  ---------- */
+/* ----------- 작명개명 신청하기 폼 페이지 시작  ---------- */
 
 .submitForm-wrap {
     margin: 20px auto;
@@ -785,6 +805,8 @@ body {
     margin-top:25px;
     display: flex;
     flex-direction: column;
+    gap:15px;
+    padding-bottom:25px;
 }
 
 .submitForm-wrap .requester-form-wrap .form-content div {
@@ -900,9 +922,20 @@ body {
     height: 35px;
 }
 
-/* ----------- jakmyung form page end  ---------- */
+/* ----------- 작명개명 신청하기 폼 페이지 끝  ---------- */
 
-/* ----------- submit find form page start  ---------- */
+/* ----------- 신청서 확인 폼 페이지 시작  ---------- */
+
+.auth-no-submit {
+    width:100%;
+    height:200px;
+    color:brown;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.2rem;
+}
+
 
 .find-form {
     width:100%;
@@ -913,6 +946,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .find-form form {
     display: flex;
     flex-direction: column;
@@ -965,9 +999,9 @@ body {
     margin: 10px 0;
 
 }
-/* ----------- submit find form page end  ---------- */
+/* ----------- 신청서 확인 폼 페이지 끝  ---------- */
 
-/* ----------- submit check page start  ---------- */
+/* ----------- 신청내용 확인 페이지 시작  ---------- */
 
 .submit-check-wrap{
     margin: 0 auto;
@@ -1035,13 +1069,15 @@ body {
     font-size: 1rem;
     height:40px;
 }
+/* ----------- 신청내용 확인 페이지 끝  ---------- */
 
 
-/* ----------- saju form page start  ---------- */
+/* ----------- 사주/궁합 신청하기 시작  ---------- */
 
 .submitForm-wrap .sjperson-form-wrap{
     border : 1px solid #e7e7e7;
     border-radius: 20px;
+    padding-bottom: 20px;
 }
 .submitForm-wrap .sjperson-form-wrap .title-wrap{
     width:88%;
@@ -1049,6 +1085,7 @@ body {
     display: flex;
     justify-content: space-between;
     height:50px;
+    margin-bottom: 20px;
 }
 
 .submitForm-wrap .sjperson-form-wrap .title-wrap .title{
@@ -1088,6 +1125,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     column-gap: 25px;
+    row-gap:10px;
 }
 
 .submitForm-wrap .sjperson-form-wrap .person-form-sj p:nth-of-type(1) input{
@@ -1130,5 +1168,31 @@ body {
     border: none;
     cursor: pointer;
 }
-/* ----------- saju form page end  ---------- */
+/* ----------- 사주/궁합 신청하기 끝  ---------- */
 
+
+
+.login-wrap{width:100%;display:flex;justify-content:center;height:100%;margin:30px 0;font-size:1.1rem;}
+.login {width:60%;align-self:center;display:flex;flex-direction:column;gap:15px;padding:20px 10px;}
+.login-wrap .border {border: 1px solid #aaa;border-radius:10px;}
+.login form {width:80%;margin:0 auto;}
+.login a {text-decoration: underline;color:#B45F04;}
+.login .secondaryAction{align-self:center;}
+.login p {align-self:center;}
+.login form p label {display:inline-block;width:110px;}
+.login form p input {width:140px;height:20px;}
+.login form p:nth-last-of-type(1) {display:flex;justify-content:center;align-items:center;gap:5px;}
+.login form p:nth-last-of-type(1) label{width:90px;}
+.login form p:nth-last-of-type(1) input{width:10px;}
+.login form button:nth-last-of-type(1){width:130px;align-self:center;height:30px;font-size:1rem;}
+
+.signup-wrap{width:100%;display:flex;justify-content:center;margin: 30px 0;height:100%;font-size:1.1rem;}
+.signup-wrap .border{border: 1px solid #aaa;border-radius:10px;}
+.signup {width:60%;align-self:center;display:flex;flex-direction:column;gap:15px;padding:20px 10px;}
+.signup form {width:90%;margin:0 auto;}
+.signup a {text-decoration: underline;color:#B45F04;}
+.signup p {align-self:center;}
+.signup form p label {display:inline-block;width:130px;}
+.signup form p input {width:140px;height:20px;}
+.signup form button:nth-last-of-type(1){width:130px;align-self:center;height:30px;font-size:1rem;}
+.signup .form-error{color:red;margin:0 auto;}

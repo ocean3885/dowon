@@ -6,10 +6,31 @@
     <div class="conimg">
         <img aria-label="conimage" src="{% static "img/m-maintext.png" %}" >            
     </div>
+    
+    {% if auth_nosubmit %}
+    
+    <div class="auth-no-submit">
+        <b>"{{user.username}}"</b> 님의 신청내역이 없습니다. 
+    </div>
 
+    <div class="blank-space"></div>
+
+    <div class="submit-info">
+        {% include 'mobile/components/submit_info.html' %}            
+    </div>
+
+    <div class="blank-space"></div>
+
+    <div class="reserve">
+        {% include 'mobile/components/reserve.html' %}            
+    </div>
+
+    {% else %}
     <div class="find-form">
-        {% if name %}
-        <h4>"해당되는 신청서가 없습니다."</h4>
+        {% if nosubmit %}
+        <div class="no-submit">
+            <b>"{{name}}"</b> , <b>"{{number}}"</b> 에 해당하는 신청내역이 없습니다. 이름과 전화번호를 정확하게 입력해주세요"
+        </div>
         {% endif %}
         <form method="POST" autocomplete="off" enctype="multipart/form-data">
         {% csrf_token %}
@@ -25,6 +46,7 @@
             <button type="submit">확인</button>
         </form>
     </div>
+    {% endif %}
     
     <div class="account-info">
         {% include 'mobile/components/account_info.html' %}            

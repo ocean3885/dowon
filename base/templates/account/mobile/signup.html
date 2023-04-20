@@ -1,0 +1,57 @@
+{% extends 'mobile/main.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+
+<div class="container">
+    <div class="conimg">
+        <img aria-label="conimage" src="{% static 'img/m-maintext.png' %}" >            
+    </div>
+    
+    <div class="sub-title">
+        <div class="t1-wrap">
+            <div class="t1">
+                회원가입
+            </div>
+        </div>
+    </div>
+    
+    <div class="signup-wrap">
+        <div class="signup border">            
+            <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+                {% for error in form.non_field_errors %}
+                <div class="form-error error-message">{{ error }}</div>
+                {% endfor %}
+                {% for error in form.username.errors %}<div class="form-error error-message">{{ error }}</div>{% endfor %}
+                <p><label for="id_username">아이디 :</label> <input type="text" name="username" placeholder="아이디" autocomplete="username" minlength="1" maxlength="150" required id="id_username"></p>
+                {% for error in form.email.errors %}<div class="form-error error-message">{{ error }}</div>{% endfor %}
+                <p><label for="id_email">이메일 :</label> <input type="email" name="email" placeholder="이메일 주소" autocomplete="email" id="id_email"></p>
+                {% for error in form.phonnumber.errors %}<div class="form-error error-message">{{ error }}</div>{% endfor %}
+                <p><label for="id_phonnumber">전화번호 :</label> <input type="text" name="phonnumber" maxlength="20" required id="id_phonnumber"></p>
+                {% for error in form.password1.errors %}<div class="form-error error-message">{{ error }}</div>{% endfor %}
+                <p><label for="id_password1">비밀번호 :</label> <input type="password" name="password1" placeholder="비밀번호" autocomplete="new-password" required id="id_password1"></p>
+                {% for error in form.password2.errors %}<div class="form-error error-message">{{ error }}</div>{% endfor %}
+                <p><label for="id_password2">비밀번호(확인) :</label> <input type="password" name="password2" placeholder="비밀번호 (확인)" autocomplete="new-password" required id="id_password2"></p>
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button type="submit">회원가입 &raquo;</button>
+            </form>            
+        </div>
+        
+    </div>
+
+    <div class="reserve">
+        {% include 'mobile/components/reserve.html' %}            
+    </div>
+
+    <div class="account-info">
+        {% include 'mobile/components/account_info.html' %}            
+    </div>
+
+</div>
+
+{% endblock content %}

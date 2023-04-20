@@ -104,6 +104,10 @@ function add_new_form(event) {
     formCopyTarget.append(copyEmptyFormEl)
     const addRemoveBtn = document.querySelector('#remove')
     addRemoveBtn.setAttribute('class','')
+    if (currentFormCount == 3) {
+        addMoreBtn.setAttribute('class','hidden')
+    }
+    
 }
 
 function remove_last_form(event) {
@@ -118,6 +122,10 @@ function remove_last_form(event) {
     if (currentFormCount == startNum ){
         const hiddenRemoveBtn = document.querySelector('#remove')
         hiddenRemoveBtn.setAttribute('class','hidden')
+        addMoreBtn.setAttribute('class','')
+    }
+    if (currentFormCount < 4) {
+        addMoreBtn.setAttribute('class','')
     }
 }
 

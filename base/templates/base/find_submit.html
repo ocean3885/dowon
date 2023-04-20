@@ -11,6 +11,17 @@
         <div class="subCent">
              {% include 'base/components/sub_sidemenu2.html' %}
             <div class="subContent">
+                {% if auth_nosubmit %}
+                
+                <div class="auth-no-submit">
+                    <b>"{{user.username}}"</b> 님의 신청내역이 없습니다. 
+                </div>
+                
+                <div class="submit-info">
+                    {% include 'base/components/submit_info_content.html' %}            
+                </div>
+                
+                {% else %}
                 <div class="find-form">
                     {% if nosubmit %}
                         <div>
@@ -40,6 +51,7 @@
                         <button type="submit">확인</button>
                     </form>
                 </div>
+                {% endif %}
             </div>
         </div>
         

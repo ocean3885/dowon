@@ -41,17 +41,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     
     'django.contrib.sites',
+    
+    
+    'base',
 
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    
     
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django_user_agents',
     'widget_tweaks',
     'twilio',
-    'base',
     'mobile',
     'msr_database',
     'manseryuk',
@@ -139,7 +142,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
 TIME_ZONE = 'Asia/Seoul'
 
@@ -171,7 +174,8 @@ except ImportError:
 
 # allauth 관련설정
 
-LOGIN_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_SIGNUP_FORM_CLASS = 'base.forms.SignupForm'
+ACCOUNT_EMAIL_VERIFICATION = "none"

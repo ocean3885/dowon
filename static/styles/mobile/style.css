@@ -5,6 +5,7 @@
 
 a {color:rgb(0, 0, 0);text-decoration: none; outline: none}
 a:hover, a:active {text-decoration: none; color:rgb(0, 0, 0); background-color:#ffffff;}
+p {margin-block-start: 0; margin-block-end: 0;}
 
 .errorlist {
     color : red;
@@ -69,6 +70,24 @@ body {
     padding: 0;
     margin: 0 auto;
 }
+
+/* ----------- 신청서 리스트 페이지 시작  ---------- */
+
+.submit-list-wrap {width:100%;margin:30px 0;}
+.submit-list { width:90%;margin:0 auto;}
+.submit-list .table {display:table;border-collapse: collapse;width:95%;margin:0 auto;}
+.submit-list .table .title{height:40px;font-size:1.1rem;border-bottom: 2px solid rgb(157, 115, 115);}
+.submit-list .table-row {display:table-row;border-bottom: 1px solid gray;height:40px;}
+.submit-list .table-row div:nth-of-type(1) {width:10%;}
+.submit-list .table-row div:nth-of-type(2) {width:20%;}
+.submit-list .table-row div:nth-of-type(3) {width:20%;}
+.submit-list .table-row div:nth-of-type(4) {width:20%;}
+.submit-list .table-cell {display:table-cell;text-align:center;vertical-align:middle;}
+
+
+
+/* ----------- 신청서 리스트 페이지 끝  ---------- */
+
 
 /* ----------  신청안내 및 작명절차 컴포넌트 시작 ---------- */
 
@@ -1220,19 +1239,27 @@ input[name="tab_item"] {
 
 /* ----------- submit find form page start  ---------- */
 
+.auth-no-submit {
+    width:100%;
+    height:100px;
+    color:brown;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
 .find-form {
     width:100%;
-    height: calc(100% - 180px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items:center;
 }
 
-.find-form h4{
-    margin:0;
-    padding:0;
+.find-form .no-submit {
     margin-top:20px;
+    color:red;
+    max-width:300px;
 }
 .find-form form {
     margin-top:30px;
@@ -1549,5 +1576,29 @@ input[name="tab_item"] {
     .subContent img {width:300px;}
     .lcon-div {width:40%;}
     .lcon_img {height:auto;max-height:110px;}
-
 }
+
+.login-wrap{width:100%;display:flex;align-content:center;height:300px;justify-content:center;}
+.login {width:80%;align-self:center;display:flex;flex-direction:column;gap:10px;padding:20px 10px;max-width:400px;}
+.login-wrap .border {border: 1px solid #aaa;border-radius:10px;}
+.login form {width:80%;margin:0 auto;}
+.login a {text-decoration: underline;color:#B45F04;}
+.login .secondaryAction{align-self:center;}
+.login p {align-self:center;}
+.login form p label {display:inline-block;width:70px;}
+.login form p input {width:130px;}
+.login form p:nth-last-of-type(1) label{width:90px;}
+.login form p:nth-last-of-type(1) input{width:10px;}
+.login form button:nth-last-of-type(1){width:130px;align-self:center;}
+
+.signup-wrap{width:100%;display:flex;align-content:center;justify-content:center;margin: 30px 0;}
+.signup-wrap .border{border: 1px solid #aaa;border-radius:10px;}
+.signup {width:90%;align-self:center;display:flex;flex-direction:column;gap:15px;padding:20px 10px;max-width:400px;}
+.signup h2 {align-self:center;}
+.signup form {width:90%;margin:0 auto;}
+.signup a {text-decoration: underline;color:#B45F04;}
+.signup p {align-self:center;}
+.signup form p label {display:inline-block;width:110px;}
+.signup form p input {width:130px;}
+.signup form button:nth-last-of-type(1){width:130px;align-self:center;}
+.signup .form-error{width:90%;color:red;margin:0 auto;max-width:250px;}

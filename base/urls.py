@@ -11,6 +11,7 @@ urlpatterns = [
     path('submit-gm/', views.submit_gm, name="submit-gm"),
     path('submit-sj/', views.submit_sj, name="submit-sj"),
     path('find-submit/', views.find_submit, name="find-submit"),
+    path('submit-detail/<int:pk>', views.submit_detail, name="submit-detail"),
     path('submit/delete/', views.delete_submit, name="delete-submit"),
     path('submit-info/', views.submit_info, name="submit-info"),
     path('about-saju/', views.about_saju, name="about-saju"),

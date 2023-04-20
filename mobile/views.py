@@ -46,6 +46,8 @@ def m_submit_jm(request):
         if all([form1.is_valid(),form2.is_valid()]):
             obj = form1.save(commit=False)
             obj.category = "신생아작명"
+            if request.user.is_authenticated:
+                obj.user = request.user
             obj.save()
             person = form2.save(commit=False)
             person.submit = obj
@@ -73,6 +75,8 @@ def m_submit_gm(request):
         if all([form1.is_valid(),form2.is_valid()]):
             obj = form1.save(commit=False)
             obj.category = "개명"
+            if request.user.is_authenticated:
+                obj.user = request.user
             obj.save()
             person = form2.save(commit=False)
             person.submit = obj
@@ -128,9 +132,8 @@ def m_find_submit(request):
         f_number = request.POST.get('f_number')
         obj_count = Submit.objects.filter(name=f_name, phonnumber=f_number).count()
         if obj_count == 0:
-            context = { 'name': f_name, 'number': f_number}
+            context = { 'nosubmit': 1, 'name':f_name, 'number':f_number}
             return render(request,'mobile/m_find_submit.html',context)
-
         elif obj_count == 1:
             obj1 = Submit.objects.get(name=f_name, phonnumber=f_number)
             if obj1.category == "신생아작명" or obj1.category == "개명":
@@ -140,14 +143,40 @@ def m_find_submit(request):
                 persons = obj1.persons.all()
                 context = { 'submit': obj1, 'persons': persons}
             return render(request,'mobile/m_submit_check.html', context)
-
         else:
             obj1 = Submit.objects.filter(name=f_name, phonnumber=f_number)
             context = { 'submits': obj1 }
             return render(request,'mobile/m_find_submit_list.html', context)
-
+    if request.user.is_authenticated:
+        obj_count = Submit.objects.filter(user=request.user).count()
+        if obj_count == 0:
+            context = { 'auth_nosubmit': 1, 'user': request.user}
+            return render(request,'mobile/m_find_submit.html',context)
+        elif obj_count == 1:
+            obj1 = Submit.objects.get(user=request.user)
+            if obj1.category == "신생아작명" or obj1.category == "개명":
+                obj2 = Person.objects.get(submit__id=obj1.id)
+                context = { 'submit': obj1, 'person': obj2}
+            elif obj1.category == "사주상담" or obj1.category == "궁합":
+                persons = obj1.persons.all()
+                context = { 'submit': obj1, 'persons': persons}
+            return render(request,'mobile/m_submit_check.html', context)
+        else:
+            obj1 = Submit.objects.filter(user=request.user)
+            context = { 'submits': obj1 }
+            return render(request,'mobile/m_find_submit_list.html', context)
     return render(request,'mobile/m_find_submit.html')
 
+
+def m_submit_detail(request,pk):
+    obj1 = Submit.objects.get(pk=pk)
+    if obj1.category == "신생아작명" or obj1.category == "개명":
+        obj2 = Person.objects.get(submit__id=obj1.id)
+        context = { 'submit': obj1, 'person': obj2}
+    elif obj1.category == "사주상담" or obj1.category == "궁합":
+        persons = obj1.persons.all()
+        context = { 'submit': obj1, 'persons': persons}
+    return render(request,'mobile/m_submit_check.html', context)
 
 def m_submit_sj(request):
     PersonFormset = modelformset_factory(Person,form=SjPersonForm,extra=1)
@@ -156,6 +185,8 @@ def m_submit_sj(request):
         formset = PersonFormset(request.POST)
         if all([form.is_valid(),formset.is_valid()]):
             parent = form.save(commit=False)
+            if request.user.is_authenticated:
+                parent.user = request.user
             parent.save()
             for each in formset:
                 child = each.save(commit=False)

@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<div class="wrap">
+    {% include 'header.html' %}
+
+    <div class="container">
+        <div class="subCent">
+            <div class="subLeftBan"></div>
+            <div class="subRightBan"></div>
+        </div>
+        <div class="subCent">
+            {% include 'base/components/sub_sidemenu2.html' %}
+            <div class="subContent">
+                
+                <div class="sub-title">
+                    <div class="t1-wrap">
+                        <div class="t1">
+                            로그인
+                        </div>
+                    </div>
+                </div>    
+
+                <div class="login-wrap">
+                    <div class="login border">
+                        <p>{% blocktrans %}아직, 회원가입을 하지 않으셨다면 먼저 
+                        <a href="{{ signup_url }}">회원가입</a>을 해주시기 바랍니다.{% endblocktrans %}</p>
+                        <form class="login" method="POST" action="{% url 'account_login' %}">
+                          {% csrf_token %}
+                          {{ form.as_p }}
+                          {% if redirect_field_value %}
+                              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                          {% endif %}
+                          <!-- <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a> -->
+                          <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        {% include 'footer.html' %}
+
+    </div>
+</div>
+{% endblock content %}

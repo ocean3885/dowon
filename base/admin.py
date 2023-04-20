@@ -8,7 +8,8 @@ class PersonInline(admin.StackedInline):
     model = Person
 
 class SubmitAdmin(admin.ModelAdmin):
-    list_display = ('category', 'name', 'adress', 'phonnumber', 'email', 'created')
+    list_display = ('category', 'name', 'adress', 'phonnumber', 'email', 'created', 'process','complete')
+    list_editable = ('process','complete',)
     inlines = (
         PersonInline,
     )
