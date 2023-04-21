@@ -102,6 +102,61 @@ body {
 
 /* ---------  header end --------- */
 
+/* ----------  찾아오는길 컴포넌트 시작 ---------- */
+
+.map-wrap {
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin:20px 0;
+}
+
+.map-wrap .map {
+    width:90%;
+}
+
+.address-wrap {
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-top:10px;
+}
+
+.address-wrap .t1 {
+    position:relative;
+    padding-left:10px;
+    font-size:1.1rem;
+}
+
+.address-wrap .t1::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    width: 5px;
+    height: 15px;
+    background: #8b4513;
+}
+
+.address-wrap .t2 {
+    margin-top:10px;
+    font-size:0.9rem;
+    line-height:160%;
+}
+
+@media (min-width:400px){
+    .address-wrap .t2 {font-size:1rem;}
+}
+
+.address-wrap span {
+    color:gray;
+    font-size:0.9rem;
+}
+
+/* ----------  찾아오는길 컴포넌트 끝 ---------- */
+
+
+
 /* ----------- 신청서 리스트 페이지 시작  ---------- */
 
 .submit-list-wrap {width:100%;margin:30px 0;}
