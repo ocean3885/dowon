@@ -30,7 +30,7 @@
                 {% for error in form.email.errors %}<div class="form-error error-message">{{ error }}</div>{% endfor %}
                 <p><label for="id_email">이메일 :</label> <input type="email" name="email" placeholder="이메일 주소" autocomplete="email" id="id_email"></p>
                 {% for error in form.phonnumber.errors %}<div class="form-error error-message">{{ error }}</div>{% endfor %}
-                <p><label for="id_phonnumber">전화번호 :</label> <input type="text" name="phonnumber" maxlength="20" required id="id_phonnumber"></p>
+                <p><label for="id_phonnumber">전화번호 :</label> <input type="text" name="phonnumber" placeholder="전화번호" maxlength="20" required id="id_phonnumber"></p>
                 {% for error in form.password1.errors %}<div class="form-error error-message">{{ error }}</div>{% endfor %}
                 <p><label for="id_password1">비밀번호 :</label> <input type="password" name="password1" placeholder="비밀번호" autocomplete="new-password" required id="id_password1"></p>
                 {% for error in form.password2.errors %}<div class="form-error error-message">{{ error }}</div>{% endfor %}

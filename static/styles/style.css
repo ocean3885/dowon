@@ -382,9 +382,10 @@ body {
     display: flex;    
 
 }
-
+.con_nav ul a {
+    width:20%;
+}
 .con_nav > ul > a > li {
-    width: 240px;    
     height : 60px;
     display: flex;
     justify-content: center;

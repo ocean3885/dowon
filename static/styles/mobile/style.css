@@ -710,7 +710,6 @@ body {
 
 .menu-button-container {
     display: flex;
-    /* margin-left:10px; */
     height: 100%;
     width: 30px;
     padding: 0 20px 0 10px;
@@ -1578,7 +1577,7 @@ input[name="tab_item"] {
     .lcon_img {height:auto;max-height:110px;}
 }
 
-.login-wrap{width:100%;display:flex;align-content:center;height:300px;justify-content:center;}
+.login-wrap{width:100%;display:flex;align-content:center;height:300px;justify-content:center;margin:30px 0;}
 .login {width:80%;align-self:center;display:flex;flex-direction:column;gap:10px;padding:20px 10px;max-width:400px;}
 .login-wrap .border {border: 1px solid #aaa;border-radius:10px;}
 .login form {width:80%;margin:0 auto;}
@@ -1589,7 +1588,7 @@ input[name="tab_item"] {
 .login form p input {width:130px;}
 .login form p:nth-last-of-type(1) label{width:90px;}
 .login form p:nth-last-of-type(1) input{width:10px;}
-.login form button:nth-last-of-type(1){width:130px;align-self:center;}
+.login form button:nth-last-of-type(1){width:130px;align-self:center;height:30px;font-size:1rem;}
 
 .signup-wrap{width:100%;display:flex;align-content:center;justify-content:center;margin: 30px 0;}
 .signup-wrap .border{border: 1px solid #aaa;border-radius:10px;}
@@ -1600,5 +1599,5 @@ input[name="tab_item"] {
 .signup p {align-self:center;}
 .signup form p label {display:inline-block;width:110px;}
 .signup form p input {width:130px;}
-.signup form button:nth-last-of-type(1){width:130px;align-self:center;}
+.signup form button:nth-last-of-type(1){width:130px;align-self:center;height:30px;font-size:1rem;}
 .signup .form-error{width:90%;color:red;margin:0 auto;max-width:250px;}

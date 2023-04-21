@@ -10,6 +10,13 @@ class SignupForm(forms.ModelForm):
 
         model = User
         fields = ['phonnumber']
+        widgets = {
+            "phonnumber": forms.TextInput(
+                attrs={
+                    "placeholder": "전화번호",
+                }
+            ),
+        }
 
     def signup(self, request, user):
         user.phonnumber = self.cleaned_data['phonnumber']
