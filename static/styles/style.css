@@ -895,6 +895,7 @@ body {
     height:30px;
     padding-left: 10px;
     border-radius: 5px;
+    box-sizing: border-box;
     border: 1px solid #535353;
     outline: none;
     border-bottom-width: 2px;
