@@ -5,14 +5,11 @@ from .forms import ManseryukForm
 from msr_database.views import Msr_Calculator
 
 
-
-
 class msrInputView(CreateView):
     model = Manseryuk
     form_class = ManseryukForm
     template_name = "manseryuk/msr_input.html"
-    
-            
+
     def get_success_url(self):
         return reverse("msr-detail", kwargs={"msr_id": self.object.id})
 
@@ -27,7 +24,7 @@ class msrDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         this_msr = Manseryuk.objects.get(pk=self.kwargs.get('msr_id'))
         data = Msr_Calculator()
-        datas = data.getAll(this_msr.year, this_msr.month, this_msr.day, this_msr.time, this_msr.sl, this_msr.gen)
+        datas = data.getAll(this_msr.year, this_msr.month, this_msr.day,
+                            this_msr.time, this_msr.sl, this_msr.gen, this_msr.yd)
         context["datas"] = datas
         return context
-    

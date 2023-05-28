@@ -1066,12 +1066,25 @@ input[name="tab_item"] {
 }
 
 .submitForm-wrap .form-box .form-content p label {
-    width:150px;
+    width:125px;
 }
 
 .submitForm-wrap .form-box .form-content p input {
     width:90%;
     height:25px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #535353;
+    outline: none;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-family: "NotoSansKR-light";
+}
+
+.submitForm-wrap .form-box .form-content p select {
+    width:93%;
+    height:30px;
     padding-left: 10px;
     border-radius: 5px;
     border: 1px solid #535353;
@@ -1564,8 +1577,9 @@ input[name="tab_item"] {
     .hrightbtn img{width:15px;}
     .hrightbtn div{left: 27px;top: 3px;}
     .submitForm-wrap .requester-form-wrap .form-content p {flex-direction: row;}
-    .submitForm-wrap .requester-form-wrap .form-content p input {width:80%;}
-    .submitForm-wrap .requester-form-wrap .form-content p textarea {width:80%;}
+    .submitForm-wrap .requester-form-wrap .form-content p input {width:calc(100% - 150px);}
+    .submitForm-wrap .requester-form-wrap .form-content p select {width:calc(100% - 138px);}
+    .submitForm-wrap .requester-form-wrap .form-content p textarea {width:calc(100% - 150px);}
     .submitForm-wrap .person-form-wrap .person-form p:nth-of-type(1){width:140px;}    
     .submitForm-wrap .person-form-wrap .person-form p:nth-of-type(3){width:290px;}    
     .submitForm-wrap .person-form-wrap .person-form #id_sl{top:0;left:250px;}

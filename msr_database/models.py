@@ -7,6 +7,7 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
+
 class CalendaData(models.Model):
     cd_no = models.AutoField(primary_key=True, blank=True, null=False)
     cd_sgi = models.IntegerField()

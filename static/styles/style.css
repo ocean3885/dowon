@@ -890,8 +890,8 @@ body {
     width:150px;
 }
 
-.submitForm-wrap .requester-form-wrap .form-content p input {
-    width:300px;
+.submitForm-wrap .requester-form-wrap .form-content p input,
+.submitForm-wrap .requester-form-wrap .form-content p select{
     height:30px;
     padding-left: 10px;
     border-radius: 5px;
@@ -902,6 +902,14 @@ body {
     font-size: 1rem;
     font-family: "NotoSansKR-light";
 
+}
+
+.submitForm-wrap .requester-form-wrap .form-content p input{
+    width:300px;
+}
+
+.submitForm-wrap .requester-form-wrap .form-content p select{
+    width:120px;
 }
 
 .submitForm-wrap .requester-form-wrap .form-content p textarea {
