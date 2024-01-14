@@ -128,7 +128,7 @@ class PersonForm(ModelForm):
 
     today = datetime.date.today()
     YEAR_CHOICES = []
-    for r in range(1940, (datetime.datetime.now().year+1)):
+    for r in range(1940, (today.year+1)):
         YEAR_CHOICES.append((r, r))
     YEAR_CHOICES.reverse()
     year = forms.ChoiceField(widget=forms.Select, choices=YEAR_CHOICES,
