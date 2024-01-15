@@ -4,12 +4,12 @@ from .forms import (JmSubmitForm, GmSubmitForm, PersonForm,
                     SjSubmitForm, SjPersonForm)
 from .models import Submit, Person
 # import os
-from twilio.rest import Client
-from dowon.settings import get_secret
+# from twilio.rest import Client
+# from dowon.settings import get_secret
 
-account_sid = "ACb7c759d083e6fa63272fa37f93de1040"
-auth_token = get_secret("AUTH_TOKEN")
-client = Client(account_sid, auth_token)
+# account_sid = "ACb7c759d083e6fa63272fa37f93de1040"
+# auth_token = get_secret("AUTH_TOKEN")
+# client = Client(account_sid, auth_token)
 
 
 def home(request):
@@ -65,12 +65,12 @@ def submit_jm(request):
             person.submit = obj
             person.save()
             context = {'submit': obj, 'person': person}
-            message = client.messages.create(
-              body="작명신청이 접수되었습니다.",
-              from_="+15673811669",
-              to="+821022324548"
-            )
-            print(message.sid)
+            # message = client.messages.create(
+            #   body="작명신청이 접수되었습니다.",
+            #   from_="+15673811669",
+            #   to="+821022324548"
+            # )
+            # print(message.sid)
             return render(request, 'base/submit_complete.html', context)
         else:
             context = {'form1': form1, 'form2': form2}
@@ -96,12 +96,12 @@ def submit_gm(request):
             person.submit = obj
             person.save()
             context = {'submit': obj, 'person': person}
-            message = client.messages.create(
-              body="개명신청이 접수되었습니다.",
-              from_="+15673811669",
-              to="+821022324548"
-            )
-            print(message.sid)
+            # message = client.messages.create(
+            #   body="개명신청이 접수되었습니다.",
+            #   from_="+15673811669",
+            #   to="+821022324548"
+            # )
+            # print(message.sid)
             return render(request, 'base/submit_complete.html', context)
     form1 = GmSubmitForm()
     form2 = PersonForm()
@@ -128,12 +128,12 @@ def submit_sj(request):
                 'submit': parent,
                 'persons': persons,
             }
-            message = client.messages.create(
-              body="사주상담신청이 접수되었습니다.",
-              from_="+15673811669",
-              to="+821022324548"
-            )
-            print(message.sid)
+            # message = client.messages.create(
+            #   body="사주상담신청이 접수되었습니다.",
+            #   from_="+15673811669",
+            #   to="+821022324548"
+            # )
+            # print(message.sid)
             return render(request, 'base/submit_complete.html', context)
 
     form = SjSubmitForm()
