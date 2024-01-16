@@ -2,13 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.forms.models import modelformset_factory
 from base.forms import JmSubmitForm, GmSubmitForm, PersonForm, SjSubmitForm, SjPersonForm
 from base.models import Submit, Person
-# import os
-# from twilio.rest import Client
-# from dowon.settings import get_secret
+import requests
 
-# account_sid = "ACb7c759d083e6fa63272fa37f93de1040"
-# auth_token = get_secret("AUTH_TOKEN")
-# client = Client(account_sid, auth_token)
+send_url = 'https://apis.aligo.in/send/'
 
 
 def m_home(request):
@@ -61,12 +57,14 @@ def m_submit_jm(request):
             person.submit = obj
             person.save()
             context = {'submit': obj, 'person': person}
-            # message = client.messages.create(
-            #   body="작명신청이 접수되었습니다.",
-            #   from_="+15673811669",
-            #   to="+821022324548"
-            # )
-            # print(message.sid)
+            sms_data = {'key': 'mbam9e8v586xu9vugol89i2wxvihrv9l',
+                        'userid': 'ocean3885',
+                        'sender': '01022324548',
+                        'receiver': '01022324548',
+                        'msg': '작명신청이 접수되었습니다.'
+                        }
+            send_response = requests.post(send_url, data=sms_data)
+            print(send_response.json())
             return render(request, 'mobile/m_submit_complete.html', context)
         else:
             context = {'form1': form1, 'form2': form2}
@@ -91,12 +89,14 @@ def m_submit_gm(request):
             person.submit = obj
             person.save()
             context = {'submit': obj, 'person': person}
-            # message = client.messages.create(
-            #   body="개명신청이 접수되었습니다.",
-            #   from_="+15673811669",
-            #   to="+821022324548"
-            # )
-            # print(message.sid)
+            sms_data = {'key': 'mbam9e8v586xu9vugol89i2wxvihrv9l',
+                        'userid': 'ocean3885',
+                        'sender': '01022324548',
+                        'receiver': '01022324548',
+                        'msg': '개명신청이 접수되었습니다.'
+                        }
+            send_response = requests.post(send_url, data=sms_data)
+            print(send_response.json())
             return render(request, 'mobile/m_submit_complete.html', context)
     form1 = GmSubmitForm()
     form2 = PersonForm()
@@ -210,12 +210,14 @@ def m_submit_sj(request):
                 'submit': parent,
                 'persons': persons,
                 }
-            # message = client.messages.create(
-            #   body="사주상담신청이 접수되었습니다.",
-            #   from_="+15673811669",
-            #   to="+821022324548"
-            # )
-            # print(message.sid)
+            sms_data = {'key': 'mbam9e8v586xu9vugol89i2wxvihrv9l',
+                        'userid': 'ocean3885',
+                        'sender': '01022324548',
+                        'receiver': '01022324548',
+                        'msg': '사주상담신청이 접수되었습니다.'
+                        }
+            send_response = requests.post(send_url, data=sms_data)
+            print(send_response.json())
             return render(request, 'mobile/m_submit_complete.html', context)
     form = SjSubmitForm()
     formset = PersonFormset(queryset=Person.objects.none())
