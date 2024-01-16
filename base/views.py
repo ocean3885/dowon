@@ -3,6 +3,9 @@ from django.forms.models import modelformset_factory
 from .forms import (JmSubmitForm, GmSubmitForm, PersonForm,
                     SjSubmitForm, SjPersonForm)
 from .models import Submit, Person
+import requests
+import json
+
 # import os
 # from twilio.rest import Client
 # from dowon.settings import get_secret
@@ -10,6 +13,7 @@ from .models import Submit, Person
 # account_sid = "ACb7c759d083e6fa63272fa37f93de1040"
 # auth_token = get_secret("AUTH_TOKEN")
 # client = Client(account_sid, auth_token)
+send_url = 'https://apis.aligo.in/send/'
 
 
 def home(request):
@@ -65,6 +69,14 @@ def submit_jm(request):
             person.submit = obj
             person.save()
             context = {'submit': obj, 'person': person}
+            sms_data= {'key': 'mbam9e8v586xu9vugol89i2wxvihrv9l',
+                       'userid': 'ocean3885',
+                       'sender': '01022324548',
+                       'receiver': '01022324548',
+                       'msg': '작명신청이 접수되었습니다.'
+                       }
+            send_response = requests.post(send_url, data=sms_data)
+            print(send_response.json())
             # message = client.messages.create(
             #   body="작명신청이 접수되었습니다.",
             #   from_="+15673811669",
